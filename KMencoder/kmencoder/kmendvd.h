@@ -111,29 +111,29 @@ protected: // Protected attributes
   int dvdangles;
 
   /** Store the DVD subtitle as QString */
-  QString *dvd_subtitle;
+  QString* dvd_subtitle;
 
   /** Stores the DVD Titles as QString */
-  QString *dvd_title;
+  QString* dvd_title;
 
   /** Stores the DVD Chapters as QString */
-  QString *dvd_chapter;
+  QString* dvd_chapter;
 
   /** Stores the DVD Angles and sub position as QString */
-  QString *dvd_subpos;
-  QString *dvd_angle;
+  QString* dvd_subpos;
+  QString* dvd_angle;
 
   /**  */
-  QString *dvd_device;
+  QString* dvd_device;
 
   /**  */
-  QString *dvd_1st_chapter;
+  QString* dvd_1st_chapter;
 
   /** Stores the DVD Audio Channel as QString */
-  QString *dvd_audio_chan;
+  QString* dvd_audio_chan;
 
   /**  */
-  QString *dvd_last_chapter;
+  QString* dvd_last_chapter;
 };
 
 #endif

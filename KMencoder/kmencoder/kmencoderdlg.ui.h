@@ -42,43 +42,37 @@ void kmencoderdlgForm::manageSourceComboBox()
     
     kmenselected.setSource( selected );
     
-    switch( selected ) {
+    switch( kmenselected.getSource() ) {
 	case srcSELECT_SOURCE: {
 	    break;
 	}
 	case srcFILE: {
 	    turn.setEnabled( "FILE" );
 	    default_settings();
-	    //set groups enabled
-	    setfilegroup( TRUE );
-	    setendpositiongroup( TRUE );
-	 
-	    //set groups disabled
-	    seturlgroup( FALSE );
-	    setdvdgroup( FALSE ); 
 	    
 	    getFileGroupStuff();
 	    break;
 	}
 	case srcPLAYLIST: {
+	    turn.setEnabled( "PLAYLIST" );
+	    default_settings();
 	    break;
 	}
 	case srcURL: {
 	    turn.setEnabled( "URL" );
 	    default_settings();
-	    //set groups enabled
-	    seturlgroup( TRUE );
-	    setendpositiongroup( TRUE );
-	 
-	    //set groups disabled
-	    setfilegroup( FALSE );
-	    setdvdgroup( FALSE ); 
 	    break;
 	}
 	case srcTV: {
+	    turn.setEnabled( "TV" );
+	    default_settings();    
 	    break;
 	}
 	case srcVCD: {
+	    turn.setEnabled( "VCD" );
+	    default_settings();
+	    
+	    vcd_scan();
 	    break;
 	}
 	case srcDVD: {
@@ -88,18 +82,8 @@ void kmencoderdlgForm::manageSourceComboBox()
 	    //Clear the DVD info combo boxes
 	    achannelComboBox->clear();
 	    subtitleComboBox->clear();
-	    
-	   // enablesubCheckBox->setChecked( FALSE );
-	    
+
 	    dvd_scan();
-	
-	    //set groups enabled
-	    setdvdgroup( TRUE );
-	    setendpositiongroup( TRUE );
-	    
-	    //set groups disabled
-	    setfilegroup( FALSE );
-	    seturlgroup( FALSE );
 	    break;
 	}
 	default: {
@@ -107,6 +91,9 @@ void kmencoderdlgForm::manageSourceComboBox()
 	    break;
 	}
     }
+  
+    setgroups();
+    
 }
 
 
@@ -121,6 +108,8 @@ HelpKPushButton->setPopup(helpMenu->menu());
 
 void kmencoderdlgForm::default_settings()
 {
+    // proc_not_loaded = TRUE;
+    
     //Set the Default Disabled CheckBoxes.
     setendpositiongroup( FALSE );
     
@@ -185,7 +174,8 @@ void kmencoderdlgForm::default_settings()
     
     manageSoundOnCheckBox();
     
-    manageDeviceChanged();
+    manageDVDChanged();
+    manageCdromChanged();
 }
 
 
@@ -413,7 +403,8 @@ void kmencoderdlgForm::setdvdgroup( bool set_it )
     achannelComboBox->setEnabled( set_it );
     audiolanguageLineEdit->setEnabled( set_it );
     audioformatLineEdit->setEnabled( set_it );
-    
+    dvddeviceKURLRequester->setEnabled( TRUE );
+	    
     dvdtittleSpinBox->setValue( (dvdinfo.getDVDTitle_selected() ).toInt() );
     dvdangleSpinBox->setValue( (dvdinfo.getDVDAngle_selected() ).toInt() ); 
     dvd1stchapterSpinBox->setValue( (dvdinfo.getDVD1stChapter() ).toInt() ); 
@@ -455,6 +446,10 @@ void kmencoderdlgForm::seturlgroup( bool set_it )
 void kmencoderdlgForm::setvcdgroup( bool set_it )
 {
     vcdGroupBox->setEnabled( set_it );
+    vcdtrackSpinBox->setEnabled( set_it );
+    cdromdeviceKURLRequester->setEnabled( TRUE );
+    
+    cdromdeviceKURLRequester->setURL( vcdinfo.getVCDDevice() );
 }
 
 
@@ -487,7 +482,7 @@ void kmencoderdlgForm::getDVDInfo()
     uint j = 0;
     uint audio = 0;
     uint subt = 0;
-    //uint comp = 0;
+
     KStringHandler catched;
     QString catched2 = "Start";
     QString catched3 = proc->readStderr();
@@ -666,71 +661,72 @@ void kmencoderdlgForm::begin()
     new_proc();
     proc->addArgument( turn.getExec() );
     try {
-    switch( selected ) {
-	case srcSELECT_SOURCE: {
+	switch( kmenselected.getSource() ) {
+	    case srcSELECT_SOURCE: {
 		throw KMenNotSet( "SOURCE" );
-	    break;
-	}
-	case srcFILE: {
-	    if( fileinfo.setFileArguments( proc ) != TRUE )
+		break;
+	    }
+	    case srcFILE: {
+		if( fileinfo.setFileArguments( proc ) != TRUE )
 		    throw KMenNotSet( "INput File" );
-	    break;
-	}
-	case srcPLAYLIST: {
-	    break;
-	}
-	case srcURL: {
-	    if ( urlinfo.setURLArguments( proc ) != TRUE )
+		break;
+	    }
+	    case srcPLAYLIST: {
+		break;
+	    }
+	    case srcURL: {
+		if ( urlinfo.setURLArguments( proc ) != TRUE )
 		    throw KMenNotSet( "URL Address" ) ;
-	    break;
+		break;
+	    }
+	    case srcTV: {
+		break;
+	    }
+	    case srcVCD: {
+		vcdinfo.setVCDArguments( proc );
+		break;
+	    }
+	    case srcDVD: {
+		dvdinfo.setDVDArguments( nosoundCheckBox->isChecked(),
+					 enablesubCheckBox->isChecked(), proc );
+		break;
+	    }
+	    default: {
+		break;
+	    }
 	}
-	case srcTV: {
-	    break;
-	}
-	case srcVCD: {
-	    break;
-	}
-	case srcDVD: {
-    dvdinfo.setDVDArguments( nosoundCheckBox->isChecked(),
-			     enablesubCheckBox->isChecked(), proc );
-	    break;
-	}
-	default: {
-	    break;
-	}
-    }
-    
-    miscinfo.setMiscArguments( proc );
-    
-    videoinfo.setVideoArguments( proc, kmenselected );  
-    
-    soundinfo.setSoundArguments( proc, kmenselected );
-    
+	
+	miscinfo.setMiscArguments( proc );
+	
+	videoinfo.setVideoArguments( proc, kmenselected );  
+	
+	soundinfo.setSoundArguments( proc, kmenselected );
+	
 	if( start_encode == TRUE ) {
 	    if( turn.setOutputFileArguments( proc ) != TRUE )
 		throw KMenNotSet( "OUTput File" );
-	proc->setCommunication( 0x02 /* | 0x04 */ | 0x08  );
-    
-    //Get Stdout info.
-    connect( proc, SIGNAL(readyReadStdout()),
-	     this, SLOT( manageProgressBar( )) );
-
-    connect( proc, SIGNAL( processExited() ),
-	     this, SLOT( manageListBoxDone() ) ); 
-	}
-    else {    
-	if( miscinfo.getMiscVerbose() == TRUE ) {
 	    proc->setCommunication( 0x02 /* | 0x04 */ | 0x08  );
 	    
+	    //Get Stdout info.
 	    connect( proc, SIGNAL(readyReadStdout()),
-		     this, SLOT( readFromStdout() ) );
+		     this, SLOT( manageProgressBar( )) );
 	    
 	    connect( proc, SIGNAL( processExited() ),
-		     this, SLOT( manageEnableControls() ) ); 
+		     this, SLOT( manageListBoxDone() ) ); 
 	}
-	else connect( proc, SIGNAL( processExited() ),
-		      this, SLOT( manageEnableControls() ) ); 
-    }
+	else {    
+	    if( miscinfo.getMiscVerbose() == TRUE ) {
+		proc->setCommunication( 0x02 /* | 0x04 */ | 0x08  );
+		
+		connect( proc, SIGNAL(readyReadStdout()),
+			 this, SLOT( readFromStdout() ) );
+		
+		connect( proc, SIGNAL( processExited() ),
+			 this, SLOT( manageEnableControls() ) ); 
+	    }
+	    else connect( proc, SIGNAL( processExited() ),
+			  this, SLOT( manageEnableControls() ) ); 
+	}
     }
     
     catch ( KMenError& theError )
@@ -783,7 +779,7 @@ void kmencoderdlgForm::prebegin()
 }
 
 
-void kmencoderdlgForm::manageDeviceChanged()
+void kmencoderdlgForm::manageDVDChanged()
 {
     dvdinfo.setDVDDevice( dvddeviceKURLRequester->url() );
 }
@@ -840,4 +836,124 @@ void kmencoderdlgForm::new_proc()
     proc = new QProcess( this );
     proc_not_loaded = FALSE;
     proc->setCommunication( 0x02 | 0x04 | 0x08 );
+}
+
+
+void kmencoderdlgForm::setgroups()
+{
+    setdvdgroup( FALSE );
+    setendpositiongroup( FALSE );
+    setfilegroup( FALSE );
+    setplaylistgroup( FALSE );
+    seturlgroup( FALSE );
+    setvcdgroup( FALSE );
+    settvgroup( FALSE );
+ 
+    switch( kmenselected.getSource() ) {
+	case srcFILE: {
+	    setfilegroup( TRUE );
+	    setendpositiongroup( TRUE );	
+	    break;
+	}
+	case srcPLAYLIST: {
+	    setplaylistgroup( TRUE );
+	    break;
+	}
+	case srcURL: {
+	    seturlgroup( TRUE );
+	    setendpositiongroup( TRUE );
+	    break;
+	}
+	case srcTV: {
+	    settvgroup( TRUE );
+	    break;
+	}
+	case srcVCD: {
+	    setvcdgroup( TRUE );
+	    setendpositiongroup( TRUE );
+	    break;
+	}
+	case srcDVD: {
+	    setdvdgroup( TRUE );
+	    setendpositiongroup( TRUE );
+	    break;
+	}
+	default: break;
+	     }
+}
+
+
+void kmencoderdlgForm::vcd_scan()
+{
+   new_proc();
+    
+    QString home_env = getenv( "HOME" );
+    home_env = home_env + "/.kmencoder";
+    
+    if( access( home_env, R_OK | W_OK | X_OK | F_OK ) != 0 ){
+	if( mkdir( home_env,  S_IRWXU ) != 0 ) {
+	    QMessageBox::critical( 0, "Error", "Error with config directory!" );
+	    return;
+	}
+    }
+    home_env = home_env + "/tmp";
+    if( access( home_env, R_OK | W_OK | X_OK | F_OK ) != 0 ) {
+	if( mkdir( home_env,  S_IRWXU ) != 0 ) {
+	    QMessageBox::critical( 0, "Error", "Error with tmp directory!" );
+	    return;
+	}
+    }
+    home_env = home_env + "/kmencoder_test.avi";
+    
+    proc->addArgument( "mencoder" );
+    proc->addArgument( "-cdrom-device" );
+    proc->addArgument( vcdinfo.getVCDDevice() );
+    proc->addArgument( "-vcd" );
+    proc->addArgument( "1" ) ;
+    proc->addArgument( "-v" );
+    proc->addArgument( "-o" );
+    proc->addArgument( home_env );
+
+    proc->setCommunication ( 0x04 );
+
+    connect( proc, SIGNAL(readyReadStderr()),
+	     this, SLOT(getVCDInfo() ));    
+
+    //Sart the process.
+    if ( !proc->start() ) {
+	// error handling
+	QMessageBox::critical( 0,
+			       "Error",
+			       "Could not scan the VCD!" );
+    } 
+}
+
+
+void kmencoderdlgForm::getVCDInfo()
+{
+   //GET Important Info of the VCD. tracks 
+    QString catched = proc->readStderr(); 
+    QString output_text = catched.simplifyWhiteSpace();
+    QString track = "track";
+   ushort indx = output_text.find( track, 0, TRUE);
+    catched = output_text.mid( indx + 6, 2 );
+    indx = catched.toInt();
+    
+    if( catched != NULL ) vcdinfo.setVCDTrack( catched );
+
+    //set info limits.
+    vcdtrackSpinBox->setMaxValue( (vcdinfo.getVCDTrack()).toInt() );
+    //vcdinfo.setVCDTrack( vcdtrackSpinBox->text() );
+}
+
+
+void kmencoderdlgForm::manageTrackChanged()
+{
+    vcdinfo.setVCDTrack( vcdtrackSpinBox->text() );
+}
+
+
+void kmencoderdlgForm::manageCdromChanged()
+{
+    vcdinfo.setVCDDevice( cdromdeviceKURLRequester->url() );
 }

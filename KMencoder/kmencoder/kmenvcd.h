@@ -1,8 +1,8 @@
 /***************************************************************************
-                          sdvdinfo.cpp  -  description
+                          kmenvcd.h  -  description
                              -------------------
-    begin                : Sat Jul 6 2002
-    copyright            : (C) 2002 by Rolando Gonzalez
+    begin                : Fri Jul 19 2002
+    copyright            : (C) 2002 by Rolando  Gonzalez
     email                : rolando8@prtc.net
  ***************************************************************************/
 
@@ -15,44 +15,45 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "sdvdinfo.h"
+#ifndef KMENVCD_H
+#define KMENVCD_H
 
-SDVDinfo::SDVDinfo(){
-  i_d = new QString( "" );
-  lang = new QString( "" );
-}
+#include <qstring.h>
+#include <qprocess.h>
 
-SDVDinfo::~SDVDinfo(){
-delete i_d;
-delete lang;
-}
+/**
+  *@author Rolando
+  */
 
-/** Set the Substitle ID */
-void SDVDinfo::setID( QString id ){
-i_d = new QString( id );
-}
+class KMenVCD {
 
-/** Set the Substitle Language */
-void SDVDinfo::setLanguage( QString language ){
-lang = new QString( language );
-}
+public:
+	KMenVCD();
 
-/** Set the Substitle Index */
-void SDVDinfo::setIndex( int index ){
-idx = index;
-}
+	~KMenVCD();
 
-/** Returns the Substitle ID */
-QString SDVDinfo::getID(){
-return *i_d;
-}
+  /** No descriptions */
+  void setVCDDevice( QString device );
 
-/** Returns the Substitle Language */
-QString SDVDinfo::getLanguage(){
-return *lang;
-}
+  /** No descriptions */
+  void setVCDTrack( QString track );
 
-/** Returns the Substitle Index */
-int SDVDinfo::getIndex(){
-return idx;
-}
+  /** No descriptions */
+  QString getVCDTrack();
+
+  /** No descriptions */
+  QString getVCDDevice();
+
+  /** No descriptions */
+  void setVCDArguments( QProcess *procs );
+
+protected: // Protected attributes
+
+  /**  */
+  QString* vcd_device;
+
+  /**  */
+  QString* vcd_track;
+};
+
+#endif

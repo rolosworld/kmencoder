@@ -3,11 +3,11 @@ bin_PROGRAMS = kmencoder
 
 ## INCLUDES were found outside kdevelop specific part
 
-kmencoder_SOURCES = kmennotset.cpp kmenerror.cpp kmenurl.cpp kmenfile.cpp kmencombobox.cpp kmenmisc.cpp kmenvideo.cpp kmensound.cpp sdvdinfo.cpp advdinfo.cpp kmendvd.cpp kmenconfig.cpp kmencoderdlg.ui kmencoder.cpp main.cpp 
+kmencoder_SOURCES = kmenvcd.cpp kmennotset.cpp kmenerror.cpp kmenurl.cpp kmenfile.cpp kmencombobox.cpp kmenmisc.cpp kmenvideo.cpp kmensound.cpp sdvdinfo.cpp advdinfo.cpp kmendvd.cpp kmenconfig.cpp kmencoderdlg.ui kmencoder.cpp main.cpp 
 kmencoder_LDADD   =  $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
 
 
-EXTRA_DIST = main.cpp kmencoder.cpp kmencoder.h kmencoder.desktop lo32-app-kmencoder.png lo16-app-kmencoder.png kmencoderdlg.ui comboboxvalues.h kmenconfig.cpp kmenconfig.h kmendvd.cpp kmendvd.h advdinfo.cpp advdinfo.h sdvdinfo.cpp sdvdinfo.h kmensound.cpp kmensound.h kmenvideo.cpp kmenvideo.h kmenmisc.cpp kmenmisc.h kmencombobox.cpp kmencombobox.h kmenfile.cpp kmenfile.h kmenurl.cpp kmenurl.h kmenerror.cpp kmenerror.h kmennotset.cpp kmennotset.h 
+EXTRA_DIST = main.cpp kmencoder.cpp kmencoder.h kmencoder.desktop lo32-app-kmencoder.png lo16-app-kmencoder.png kmencoderdlg.ui comboboxvalues.h kmenconfig.cpp kmenconfig.h kmendvd.cpp kmendvd.h advdinfo.cpp advdinfo.h sdvdinfo.cpp sdvdinfo.h kmensound.cpp kmensound.h kmenvideo.cpp kmenvideo.h kmenmisc.cpp kmenmisc.h kmencombobox.cpp kmencombobox.h kmenfile.cpp kmenfile.h kmenurl.cpp kmenurl.h kmenerror.cpp kmenerror.h kmennotset.cpp kmennotset.h kmenvcd.cpp kmenvcd.h 
 
 install-data-local:
 	$(mkinstalldirs) $(kde_appsdir)/Applications/

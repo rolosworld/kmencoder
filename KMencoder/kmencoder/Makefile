@@ -1,3 +1,4 @@
+# Generated automatically from Makefile.in by config.pl.
 # KDE tags expanded automatically by am_edit - $Revision$ 
 # Makefile.in generated automatically by automake 1.4-p5 from Makefile.am
 
@@ -18,7 +19,7 @@ SHELL = /bin/sh
 
 srcdir = .
 top_srcdir = ..
-
+VPATH = .
 prefix = /usr/local/kde
 exec_prefix = ${prefix}
 #>- 
@@ -56,7 +57,7 @@ INSTALL = /usr/bin/install -c -p
 INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG) $(AM_INSTALL_PROGRAM_FLAGS)
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_SCRIPT = ${INSTALL}
-transform = s,x,x,
+transform = s,^,i386-linux-,
 
 NORMAL_INSTALL = :
 PRE_INSTALL = :
@@ -64,18 +65,18 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_alias = 
-build_triplet = i686-pc-linux-gnu
-host_alias = 
-host_triplet = i686-pc-linux-gnu
-target_alias = 
-target_triplet = i686-pc-linux-gnu
+build_alias = i386-linux
+build_triplet = i386-pc-linux-gnu
+host_alias = i386-linux
+host_triplet = i386-pc-linux-gnu
+target_alias = i386-linux
+target_triplet = i386-pc-linux-gnu
 ARTSCCONFIG = /usr/local/kde/bin/artsc-config
 AS = @AS@
 AUTODIRS = 
 CC = gcc
 CONF_FILES =  $(top_srcdir)/./admin/configure.in.min $(top_srcdir)/configure.in.in
-CPP = gcc -E
+CPP = cpp
 CXX = g++
 CXXCPP = g++ -E
 DCOPIDL = /usr/local/kde/bin/dcopidl
@@ -160,7 +161,7 @@ MICO_LDFLAGS = @MICO_LDFLAGS@
 MOC = /usr/lib/qt-3.0.4/bin/moc
 MSGFMT = /usr/bin/msgfmt
 NOOPT_CFLAGS = 
-NOOPT_CXXFLAGS =  -fno-exceptions -fno-check-new
+NOOPT_CXXFLAGS =  -g3 -Wall -fno-exceptions -fno-check-new
 NOREPO = -fno-repo
 OBJDUMP = @OBJDUMP@
 OBJEXT = o
@@ -186,7 +187,7 @@ USER_LDFLAGS =
 USE_EXCEPTIONS = -fexceptions
 USE_RTTI = 
 USE_THREADS = 
-VERSION = 0.1
+VERSION = 0.1.2
 WOVERLOADED_VIRTUAL = 
 XGETTEXT = /usr/bin/xgettext
 XPMINC = @XPMINC@
@@ -228,12 +229,12 @@ x_libraries = /usr/X11R6/lib
 
 bin_PROGRAMS = kmencoder
 
-#>- kmencoder_SOURCES = kmennotset.cpp kmenerror.cpp kmenurl.cpp kmenfile.cpp kmencombobox.cpp kmenmisc.cpp kmenvideo.cpp kmensound.cpp sdvdinfo.cpp advdinfo.cpp kmendvd.cpp kmenconfig.cpp kmencoderdlg.ui kmencoder.cpp main.cpp 
+#>- kmencoder_SOURCES = kmenvcd.cpp kmennotset.cpp kmenerror.cpp kmenurl.cpp kmenfile.cpp kmencombobox.cpp kmenmisc.cpp kmenvideo.cpp kmensound.cpp sdvdinfo.cpp advdinfo.cpp kmendvd.cpp kmenconfig.cpp kmencoderdlg.ui kmencoder.cpp main.cpp 
 #>+ 1
-kmencoder_SOURCES=kmennotset.cpp kmenerror.cpp kmenurl.cpp kmenfile.cpp kmencombobox.cpp kmenmisc.cpp kmenvideo.cpp kmensound.cpp sdvdinfo.cpp advdinfo.cpp kmendvd.cpp kmenconfig.cpp  kmencoder.cpp main.cpp  kmencoderdlg.cpp
+kmencoder_SOURCES=kmenvcd.cpp kmennotset.cpp kmenerror.cpp kmenurl.cpp kmenfile.cpp kmencombobox.cpp kmenmisc.cpp kmenvideo.cpp kmensound.cpp sdvdinfo.cpp advdinfo.cpp kmendvd.cpp kmenconfig.cpp  kmencoder.cpp main.cpp  kmencoderdlg.cpp
 kmencoder_LDADD = $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
 
-EXTRA_DIST = main.cpp kmencoder.cpp kmencoder.h kmencoder.desktop lo32-app-kmencoder.png lo16-app-kmencoder.png kmencoderdlg.ui comboboxvalues.h kmenconfig.cpp kmenconfig.h kmendvd.cpp kmendvd.h advdinfo.cpp advdinfo.h sdvdinfo.cpp sdvdinfo.h kmensound.cpp kmensound.h kmenvideo.cpp kmenvideo.h kmenmisc.cpp kmenmisc.h kmencombobox.cpp kmencombobox.h kmenfile.cpp kmenfile.h kmenurl.cpp kmenurl.h kmenerror.cpp kmenerror.h kmennotset.cpp kmennotset.h 
+EXTRA_DIST = main.cpp kmencoder.cpp kmencoder.h kmencoder.desktop lo32-app-kmencoder.png lo16-app-kmencoder.png kmencoderdlg.ui comboboxvalues.h kmenconfig.cpp kmenconfig.h kmendvd.cpp kmendvd.h advdinfo.cpp advdinfo.h sdvdinfo.cpp sdvdinfo.h kmensound.cpp kmensound.h kmenvideo.cpp kmenvideo.h kmenmisc.cpp kmenmisc.h kmencombobox.cpp kmencombobox.h kmenfile.cpp kmenfile.h kmenurl.cpp kmenurl.h kmenerror.cpp kmenerror.h kmennotset.cpp kmennotset.h kmenvcd.cpp kmenvcd.h 
 
 ####### kdevelop will overwrite this part!!! (end)############
 # These paths are KDE specific. Use them:
@@ -275,24 +276,26 @@ DEFS = -DHAVE_CONFIG_H -I. -I$(srcdir) -I..
 CPPFLAGS =  -DQT_THREAD_SUPPORT  -D_REENTRANT
 LDFLAGS = 
 LIBS = 
-#>- kmencoder_OBJECTS =  kmennotset.$(OBJEXT) kmenerror.$(OBJEXT) \
-#>- kmenurl.$(OBJEXT) kmenfile.$(OBJEXT) kmencombobox.$(OBJEXT) \
-#>- kmenmisc.$(OBJEXT) kmenvideo.$(OBJEXT) kmensound.$(OBJEXT) \
-#>- sdvdinfo.$(OBJEXT) advdinfo.$(OBJEXT) kmendvd.$(OBJEXT) \
-#>- kmenconfig.$(OBJEXT) kmencoder.$(OBJEXT) main.$(OBJEXT)
-#>+ 10
+#>- kmencoder_OBJECTS =  kmenvcd.$(OBJEXT) kmennotset.$(OBJEXT) \
+#>- kmenerror.$(OBJEXT) kmenurl.$(OBJEXT) kmenfile.$(OBJEXT) \
+#>- kmencombobox.$(OBJEXT) kmenmisc.$(OBJEXT) kmenvideo.$(OBJEXT) \
+#>- kmensound.$(OBJEXT) sdvdinfo.$(OBJEXT) advdinfo.$(OBJEXT) \
+#>- kmendvd.$(OBJEXT) kmenconfig.$(OBJEXT) kmencoder.$(OBJEXT) \
+#>- main.$(OBJEXT)
+#>+ 11
 kmencoder_final_OBJECTS = kmencoder.all_cpp.o 
-kmencoder_nofinal_OBJECTS = kmennotset.$(OBJEXT) kmenerror.$(OBJEXT) \
-	kmenurl.$(OBJEXT) kmenfile.$(OBJEXT) kmencombobox.$(OBJEXT) \
-	kmenmisc.$(OBJEXT) kmenvideo.$(OBJEXT) kmensound.$(OBJEXT) \
-	sdvdinfo.$(OBJEXT) advdinfo.$(OBJEXT) kmendvd.$(OBJEXT) \
-	kmenconfig.$(OBJEXT) kmencoder.$(OBJEXT) main.$(OBJEXT) kmencoderdlg.$(OBJEXT)\
+kmencoder_nofinal_OBJECTS = kmenvcd.$(OBJEXT) kmennotset.$(OBJEXT) \
+	kmenerror.$(OBJEXT) kmenurl.$(OBJEXT) kmenfile.$(OBJEXT) \
+	kmencombobox.$(OBJEXT) kmenmisc.$(OBJEXT) kmenvideo.$(OBJEXT) \
+	kmensound.$(OBJEXT) sdvdinfo.$(OBJEXT) advdinfo.$(OBJEXT) \
+	kmendvd.$(OBJEXT) kmenconfig.$(OBJEXT) kmencoder.$(OBJEXT) \
+	main.$(OBJEXT) kmencoderdlg.$(OBJEXT)\
 	kmencoder.moc.o  \
 	kmencoder_meta_unload.o 
 kmencoder_OBJECTS = $(kmencoder_nofinal_OBJECTS)
 #kmencoder_OBJECTS = $(kmencoder_final_OBJECTS)
 kmencoder_DEPENDENCIES = 
-CXXFLAGS = -O2 -fno-exceptions -fno-check-new -fexceptions
+CXXFLAGS = -O2 -O0 -g3 -Wall -fno-exceptions -fno-check-new -fexceptions
 #>- CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 #>+ 1
 CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) $(KDE_CXXFLAGS)
@@ -308,7 +311,7 @@ DIST_COMMON =  Makefile.am Makefile.in
 
 #>- DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
 #>+ 4
-KDE_DIST=kmencoderdlg.ui.h kmenstructs.h 
+KDE_DIST=kmencoderdlg.ui.h kmenstructs.h kmencoder kmencoderdlg.h 
 
 DISTFILES= $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
 
@@ -318,17 +321,17 @@ GZIP_ENV = --best
 #>- DEP_FILES =  .deps/advdinfo.P .deps/kmencoder.P .deps/kmencombobox.P \
 #>- .deps/kmenconfig.P .deps/kmendvd.P .deps/kmenerror.P .deps/kmenfile.P \
 #>- .deps/kmenmisc.P .deps/kmennotset.P .deps/kmensound.P .deps/kmenurl.P \
-#>- .deps/kmenvideo.P .deps/main.P .deps/sdvdinfo.P
+#>- .deps/kmenvcd.P .deps/kmenvideo.P .deps/main.P .deps/sdvdinfo.P
 #>+ 10
 #DEP_FILES =  $(DEPDIR)/kmencoderdlg.P $(DEPDIR)/kmencoder.moc.P $(DEPDIR)/kmencoder_meta_unload.P  $(DEPDIR)/kmencoder.all_cpp.P \
 		  .deps/advdinfo.P .deps/kmencoder.P .deps/kmencombobox.P \
 	.deps/kmenconfig.P .deps/kmendvd.P .deps/kmenerror.P .deps/kmenfile.P \
 	.deps/kmenmisc.P .deps/kmennotset.P .deps/kmensound.P .deps/kmenurl.P \
-	.deps/kmenvideo.P .deps/main.P .deps/sdvdinfo.P
+	.deps/kmenvcd.P .deps/kmenvideo.P .deps/main.P .deps/sdvdinfo.P
 DEP_FILES =  $(DEPDIR)/kmencoderdlg.P $(DEPDIR)/kmencoder.moc.P $(DEPDIR)/kmencoder_meta_unload.P   .deps/advdinfo.P .deps/kmencoder.P .deps/kmencombobox.P \
 	.deps/kmenconfig.P .deps/kmendvd.P .deps/kmenerror.P .deps/kmenfile.P \
 	.deps/kmenmisc.P .deps/kmennotset.P .deps/kmensound.P .deps/kmenurl.P \
-	.deps/kmenvideo.P .deps/main.P .deps/sdvdinfo.P
+	.deps/kmenvcd.P .deps/kmenvideo.P .deps/main.P .deps/sdvdinfo.P
 
 SOURCES = $(kmencoder_SOURCES)
 OBJECTS = $(kmencoder_OBJECTS)
@@ -712,11 +715,11 @@ clean-moc-classes:
 	-rm -f  kmencoder_meta_unload.cpp
 
 #>+ 11
-kmencoder.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/kmennotset.cpp $(srcdir)/kmenerror.cpp $(srcdir)/kmenurl.cpp $(srcdir)/kmenfile.cpp $(srcdir)/kmencombobox.cpp $(srcdir)/kmenmisc.cpp $(srcdir)/kmenvideo.cpp $(srcdir)/kmensound.cpp $(srcdir)/sdvdinfo.cpp $(srcdir)/advdinfo.cpp $(srcdir)/kmendvd.cpp $(srcdir)/kmenconfig.cpp $(srcdir)/kmencoder.cpp $(srcdir)/main.cpp kmencoderdlg.cpp kmencoder_meta_unload.cpp  kmencoder.moc.cpp
+kmencoder.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/kmenvcd.cpp $(srcdir)/kmennotset.cpp $(srcdir)/kmenerror.cpp $(srcdir)/kmenurl.cpp $(srcdir)/kmenfile.cpp $(srcdir)/kmencombobox.cpp $(srcdir)/kmenmisc.cpp $(srcdir)/kmenvideo.cpp $(srcdir)/kmensound.cpp $(srcdir)/sdvdinfo.cpp $(srcdir)/advdinfo.cpp $(srcdir)/kmendvd.cpp $(srcdir)/kmenconfig.cpp $(srcdir)/kmencoder.cpp $(srcdir)/main.cpp $(srcdir)/kmencoderdlg.cpp $(srcdir)/kmencoder_meta_unload.cpp  kmencoder.moc.cpp
 	@echo 'creating kmencoder.all_cpp.cpp ...'; \
 	rm -f kmencoder.all_cpp.files kmencoder.all_cpp.final; \
 	echo "#define KDE_USE_FINAL 1" >> kmencoder.all_cpp.final; \
-	for file in kmennotset.cpp kmenerror.cpp kmenurl.cpp kmenfile.cpp kmencombobox.cpp kmenmisc.cpp kmenvideo.cpp kmensound.cpp sdvdinfo.cpp advdinfo.cpp kmendvd.cpp kmenconfig.cpp kmencoder.cpp main.cpp kmencoderdlg.cpp kmencoder_meta_unload.cpp  kmencoder.moc.cpp; do \
+	for file in kmenvcd.cpp kmennotset.cpp kmenerror.cpp kmenurl.cpp kmenfile.cpp kmencombobox.cpp kmenmisc.cpp kmenvideo.cpp kmensound.cpp sdvdinfo.cpp advdinfo.cpp kmendvd.cpp kmenconfig.cpp kmencoder.cpp main.cpp kmencoderdlg.cpp kmencoder_meta_unload.cpp  kmencoder.moc.cpp; do \
 	  echo "#include \"$$file\"" >> kmencoder.all_cpp.files; \
 	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> kmencoder.all_cpp.final; \
 	done; \
@@ -747,9 +750,10 @@ cvs-clean:
 kde-rpo-clean:
 	-rm -f *.rpo
 
-#>+ 15
+#>+ 16
 $(srcdir)/kmenurl.cpp: kmencoderdlg.h 
 $(srcdir)/sdvdinfo.cpp: kmencoderdlg.h 
+$(srcdir)/kmenvcd.cpp: kmencoderdlg.h 
 $(srcdir)/kmensound.cpp: kmencoderdlg.h 
 $(srcdir)/kmenmisc.cpp: kmencoderdlg.h 
 $(srcdir)/kmenerror.cpp: kmencoderdlg.h 
@@ -757,8 +761,8 @@ $(srcdir)/kmenconfig.cpp: kmencoderdlg.h
 $(srcdir)/kmendvd.cpp: kmencoderdlg.h 
 $(srcdir)/kmencombobox.cpp: kmencoderdlg.h 
 $(srcdir)/kmenvideo.cpp: kmencoderdlg.h 
-$(srcdir)/advdinfo.cpp: kmencoderdlg.h 
 $(srcdir)/kmennotset.cpp: kmencoderdlg.h 
+$(srcdir)/advdinfo.cpp: kmencoderdlg.h 
 $(srcdir)/main.cpp: kmencoderdlg.h 
-$(srcdir)/kmenfile.cpp: kmencoderdlg.h 
 $(srcdir)/kmencoder.cpp: kmencoderdlg.h 
+$(srcdir)/kmenfile.cpp: kmencoderdlg.h 
