@@ -1,3 +1,0 @@
-kmencombobox.o: kmencombobox.cpp kmencombobox.h
-kmencombobox.cpp :
-kmencombobox.h :
