@@ -42,12 +42,12 @@ available_tags=" CXX"
 # AR="" AR_FLAGS="" LTCC="gcc" CC="gcc" \
 # CFLAGS="-O2  " CPPFLAGS="" \
 # MAGIC_CMD="" LD="/usr/bin/ld" LDFLAGS="" LIBS="" \
-# LN_S="ln -s" NM="/usr/bin/nm -B" RANLIB="ranlib" STRIP="strip" \
+# LN_S="ln -s" NM="nm" RANLIB="ranlib" STRIP="strip" \
 # AS="" DLLTOOL="" OBJDUMP="" \
 # objext="" exeext="" reload_flag=" -r" \
 # deplibs_check_method="pass_all" \
 # file_magic_cmd="\$MAGIC_CMD" \
-#   admin/ltconfig --cache-file=/dev/null --disable-static --with-gcc --with-gnu-ld --no-verify --build=i686-pc-linux-gnu admin/ltmain.sh i686-pc-linux-gnu
+#   admin/ltconfig --cache-file=/dev/null --disable-static --with-gcc --with-gnu-ld --no-verify --build=i386-pc-linux-gnu admin/ltmain.sh i386-pc-linux-gnu
 #
 # Compiler and other test output produced by ltconfig, useful for
 # debugging ltconfig, is in ./config.log if it exists.
@@ -71,8 +71,8 @@ build_old_libs=no
 fast_install=yes
 
 # The host system.
-host_alias=i686-pc-linux-gnu
-host=i686-pc-linux-gnu
+host_alias=i386-pc-linux-gnu
+host=i386-pc-linux-gnu
 
 # An echo program that does not interpret backslashes.
 echo="echo"
@@ -97,7 +97,7 @@ LD="/usr/bin/ld"
 LN_S="ln -s"
 
 # A BSD-compatible nm program.
-NM="/usr/bin/nm -B"
+NM="nm"
 
 # A symbol stripping program
 STRIP=strip
@@ -5734,14 +5734,14 @@ build_old_libs=`case $build_libtool_libs in yes) echo no;; *) echo yes;; esac`
 # Libtool was configured as follows, on host rolo:
 #
 # AR="" AR_FLAGS="" LTCC="gcc" CC="g++" \
-# CFLAGS="-O2 -fno-exceptions -fno-check-new" CPPFLAGS="" \
+# CFLAGS="-O2 -O0 -g3 -Wall -fno-exceptions -fno-check-new" CPPFLAGS="" \
 # MAGIC_CMD="" LD="/usr/bin/ld" LDFLAGS="" LIBS="" \
-# LN_S="ln -s" NM="/usr/bin/nm -B" RANLIB="ranlib" STRIP="strip" \
+# LN_S="ln -s" NM="nm" RANLIB="ranlib" STRIP="strip" \
 # AS="" DLLTOOL="" OBJDUMP="" \
 # objext="" exeext="" reload_flag=" -r" \
 # deplibs_check_method="pass_all" \
 # file_magic_cmd="\$MAGIC_CMD" \
-#   admin/ltconfig -o libtool --cache-file=/dev/null --disable-static --with-gcc --with-gnu-ld --build=i686-pc-linux-gnu --add-tag=CXX admin/ltcf-cxx.sh i686-pc-linux-gnu
+#   admin/ltconfig -o libtool --cache-file=/dev/null --disable-static --with-gcc --with-gnu-ld --build=i386-pc-linux-gnu --add-tag=CXX admin/ltcf-cxx.sh i386-pc-linux-gnu
 #
 # Compiler and other test output produced by ltconfig, useful for
 # debugging ltconfig, is in ./config.log if it exists.
@@ -5765,8 +5765,8 @@ build_old_libs=no
 fast_install=yes
 
 # The host system.
-host_alias=i686-pc-linux-gnu
-host=i686-pc-linux-gnu
+host_alias=i386-pc-linux-gnu
+host=i386-pc-linux-gnu
 
 # An echo program that does not interpret backslashes.
 echo="echo"
@@ -5791,7 +5791,7 @@ LD="/usr/bin/ld"
 LN_S="ln -s"
 
 # A BSD-compatible nm program.
-NM="/usr/bin/nm -B"
+NM="nm"
 
 # A symbol stripping program
 STRIP=strip

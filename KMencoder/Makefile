@@ -1,3 +1,4 @@
+# Generated automatically from Makefile.in by config.pl.
 # KDE tags expanded automatically by am_edit - $Revision$ 
 # Makefile.in generated automatically by automake 1.4-p5 from Makefile.am
 
@@ -18,7 +19,7 @@ SHELL = /bin/sh
 
 srcdir = .
 top_srcdir = .
-
+VPATH = .
 prefix = /usr/local/kde
 exec_prefix = ${prefix}
 #>- 
@@ -56,7 +57,7 @@ INSTALL = /usr/bin/install -c -p
 INSTALL_PROGRAM = ${INSTALL} $(INSTALL_STRIP_FLAG) $(AM_INSTALL_PROGRAM_FLAGS)
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_SCRIPT = ${INSTALL}
-transform = s,x,x,
+transform = s,^,i386-linux-,
 
 NORMAL_INSTALL = :
 PRE_INSTALL = :
@@ -64,18 +65,18 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-build_alias = 
-build_triplet = i686-pc-linux-gnu
-host_alias = 
-host_triplet = i686-pc-linux-gnu
-target_alias = 
-target_triplet = i686-pc-linux-gnu
+build_alias = i386-linux
+build_triplet = i386-pc-linux-gnu
+host_alias = i386-linux
+host_triplet = i386-pc-linux-gnu
+target_alias = i386-linux
+target_triplet = i386-pc-linux-gnu
 ARTSCCONFIG = /usr/local/kde/bin/artsc-config
 AS = @AS@
 AUTODIRS = 
 CC = gcc
 CONF_FILES =  $(top_srcdir)/./admin/configure.in.min $(top_srcdir)/configure.in.in
-CPP = gcc -E
+CPP = cpp
 CXX = g++
 CXXCPP = g++ -E
 DCOPIDL = /usr/local/kde/bin/dcopidl
@@ -160,7 +161,7 @@ MICO_LDFLAGS = @MICO_LDFLAGS@
 MOC = /usr/lib/qt-3.0.4/bin/moc
 MSGFMT = /usr/bin/msgfmt
 NOOPT_CFLAGS = 
-NOOPT_CXXFLAGS =  -fno-exceptions -fno-check-new
+NOOPT_CXXFLAGS =  -g3 -Wall -fno-exceptions -fno-check-new
 NOREPO = -fno-repo
 OBJDUMP = @OBJDUMP@
 OBJEXT = o
@@ -186,7 +187,7 @@ USER_LDFLAGS =
 USE_EXCEPTIONS = -fexceptions
 USE_RTTI = 
 USE_THREADS = 
-VERSION = 0.1
+VERSION = 0.1.2
 WOVERLOADED_VIRTUAL = 
 XGETTEXT = /usr/bin/xgettext
 XPMINC = @XPMINC@

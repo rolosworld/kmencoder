@@ -23,7 +23,7 @@ cflags=
 cppflags=
 cxxflags=\s-O0 -g3 -Wall
 ldadd=\s$(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
-ldflags=\s  \s
+ldflags=\s   \s
 
 [General]
 AMChanged=false
@@ -31,7 +31,7 @@ author=Rolando
 configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux\s
 email=rolando8@prtc.net
 kdevprj_version=1.3
-lfv_open_groups=User Interface
+lfv_open_groups=GNU,User Interface
 make_options=\s-j1
 makefiles=Makefile.am,kmencoder/Makefile.am,doc/Makefile.am,doc/en/Makefile.am,po/Makefile.am
 modifyMakefiles=true
@@ -40,7 +40,7 @@ project_type=mini_kde2
 sgml_file=/home/rolo/Projects/Beta/kmencoder/doc/en/index.docbook
 short_info=
 sub_dir=kmencoder/
-version=0.1
+version=0.1.2
 version_control=None
 workspace=1
 
@@ -110,7 +110,7 @@ install_location=
 type=DATA
 
 [kmencoder/Makefile.am]
-files=kmencoder/main.cpp,kmencoder/kmencoder.cpp,kmencoder/kmencoder.h,kmencoder/kmencoder.desktop,kmencoder/lo32-app-kmencoder.png,kmencoder/lo16-app-kmencoder.png,kmencoder/kmencoderdlg.ui,kmencoder/comboboxvalues.h,kmencoder/kmenconfig.cpp,kmencoder/kmenconfig.h,kmencoder/kmendvd.cpp,kmencoder/kmendvd.h,kmencoder/advdinfo.cpp,kmencoder/advdinfo.h,kmencoder/sdvdinfo.cpp,kmencoder/sdvdinfo.h,kmencoder/kmensound.cpp,kmencoder/kmensound.h,kmencoder/kmenvideo.cpp,kmencoder/kmenvideo.h,kmencoder/kmenmisc.cpp,kmencoder/kmenmisc.h,kmencoder/kmencombobox.cpp,kmencoder/kmencombobox.h,kmencoder/kmenfile.cpp,kmencoder/kmenfile.h,kmencoder/kmenurl.cpp,kmencoder/kmenurl.h,kmencoder/kmenerror.cpp,kmencoder/kmenerror.h,kmencoder/kmennotset.cpp,kmencoder/kmennotset.h
+files=kmencoder/main.cpp,kmencoder/kmencoder.cpp,kmencoder/kmencoder.h,kmencoder/kmencoder.desktop,kmencoder/lo32-app-kmencoder.png,kmencoder/lo16-app-kmencoder.png,kmencoder/kmencoderdlg.ui,kmencoder/comboboxvalues.h,kmencoder/kmenconfig.cpp,kmencoder/kmenconfig.h,kmencoder/kmendvd.cpp,kmencoder/kmendvd.h,kmencoder/advdinfo.cpp,kmencoder/advdinfo.h,kmencoder/sdvdinfo.cpp,kmencoder/sdvdinfo.h,kmencoder/kmensound.cpp,kmencoder/kmensound.h,kmencoder/kmenvideo.cpp,kmencoder/kmenvideo.h,kmencoder/kmenmisc.cpp,kmencoder/kmenmisc.h,kmencoder/kmencombobox.cpp,kmencoder/kmencombobox.h,kmencoder/kmenfile.cpp,kmencoder/kmenfile.h,kmencoder/kmenurl.cpp,kmencoder/kmenurl.h,kmencoder/kmenerror.cpp,kmencoder/kmenerror.h,kmencoder/kmennotset.cpp,kmencoder/kmennotset.h,kmencoder/kmenvcd.cpp,kmencoder/kmenvcd.h
 sub_dirs=
 type=prog_main
 
@@ -259,6 +259,18 @@ install_location=
 type=SOURCE
 
 [kmencoder/kmenurl.h]
+dist=true
+install=false
+install_location=
+type=HEADER
+
+[kmencoder/kmenvcd.cpp]
+dist=true
+install=false
+install_location=
+type=SOURCE
+
+[kmencoder/kmenvcd.h]
 dist=true
 install=false
 install_location=
