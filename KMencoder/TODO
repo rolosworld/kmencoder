@@ -1,0 +1,14 @@
+
+Usar esta funcion para detectar los comandos que se van a usar!
+-bool QWidget::isEnabled () const
+    Returns TRUE if the widget is enabled;
+    otherwise returns FALSE. See the "enabled" property for details.
+
+
+    process->tryTerminate();
+    QTimer::singleShot( 5000, process, SLOT( kill() ) );
+
+
+int QMemArray::find ( const type & v, uint index = 0 ) const
+    Finds the first occurrence of v, starting at position index.
+    Returns the position of v, or -1 if v could not be found.
