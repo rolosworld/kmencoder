@@ -2,7 +2,7 @@
                           sdvdinfo.cpp  -  description
                              -------------------
     begin                : Sat Jul 6 2002
-    copyright            : (C) 2002 by Rolando
+    copyright            : (C) 2002 by Rolando  Gonzalez
     email                : rolando8@prtc.net
  ***************************************************************************/
 

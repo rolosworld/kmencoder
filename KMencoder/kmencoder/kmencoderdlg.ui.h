@@ -560,16 +560,16 @@ void kmencoderdlgForm::manageSelectAudioChannel()
 
 void kmencoderdlgForm::stop()
 {
-    if( proc_loaded == TRUE ) {
-    if( proc->isRunning() == TRUE ){
-	proc->tryTerminate();
-	QTimer::singleShot( 5000, proc, SLOT( kill() ) );
+    if( proc_not_loaded == FALSE ) {
+	if( proc->isRunning() == TRUE ){
+	    proc->tryTerminate();
+	    QTimer::singleShot( 5000, proc, SLOT( kill() ) );
 	    delete proc;
-	    proc_loaded = FALSE;
+	    proc_not_loaded = TRUE;
 	}
 	else {
 	    delete proc;
-	    proc_loaded = FALSE;
+	    proc_not_loaded = TRUE;
 	}
     }
 }
@@ -838,6 +838,6 @@ void kmencoderdlgForm::new_proc()
 {
     stop();
     proc = new QProcess( this );
-    proc_loaded = TRUE;
+    proc_not_loaded = FALSE;
     proc->setCommunication( 0x02 | 0x04 | 0x08 );
 }

@@ -1,4 +1,3 @@
-# Generated automatically from Makefile.in by config.pl.
 # KDE tags expanded automatically by am_edit - $Revision$ 
 # Makefile.in generated automatically by automake 1.4-p5 from Makefile.am
 
@@ -19,7 +18,7 @@ SHELL = /bin/sh
 
 srcdir = .
 top_srcdir = .
-VPATH = .
+
 prefix = /usr/local/kde
 exec_prefix = ${prefix}
 #>- 
@@ -248,7 +247,7 @@ DIST_COMMON =  README ./stamp-h.in AUTHORS COPYING ChangeLog INSTALL \
 
 #>- DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
 #>+ 4
-KDE_DIST=Makefile.dist subdirs configure.in.in kmencoder.kdevses messages.log configure.files 
+KDE_DIST=test.avi Makefile.dist subdirs configure.in.in kmencoder.kdevses messages.log configure.files 
 
 DISTFILES= $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
 

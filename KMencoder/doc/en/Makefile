@@ -1,4 +1,3 @@
-# Generated automatically from Makefile.in by config.pl.
 # KDE tags expanded automatically by am_edit - $Revision$ 
 # Makefile.in generated automatically by automake 1.4-p5 from Makefile.am
 
@@ -19,7 +18,7 @@ SHELL = /bin/sh
 
 srcdir = .
 top_srcdir = ../..
-VPATH = .
+
 prefix = /usr/local/kde
 exec_prefix = ${prefix}
 #>- 

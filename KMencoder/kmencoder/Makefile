@@ -1,4 +1,3 @@
-# Generated automatically from Makefile.in by config.pl.
 # KDE tags expanded automatically by am_edit - $Revision$ 
 # Makefile.in generated automatically by automake 1.4-p5 from Makefile.am
 
@@ -19,7 +18,7 @@ SHELL = /bin/sh
 
 srcdir = .
 top_srcdir = ..
-VPATH = .
+
 prefix = /usr/local/kde
 exec_prefix = ${prefix}
 #>- 
@@ -309,7 +308,7 @@ DIST_COMMON =  Makefile.am Makefile.in
 
 #>- DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
 #>+ 4
-KDE_DIST=kmencoderdlg.ui.h kmenstructs.h kmencoderdlg.h 
+KDE_DIST=kmencoderdlg.ui.h kmenstructs.h 
 
 DISTFILES= $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
 
@@ -713,7 +712,7 @@ clean-moc-classes:
 	-rm -f  kmencoder_meta_unload.cpp
 
 #>+ 11
-kmencoder.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/kmennotset.cpp $(srcdir)/kmenerror.cpp $(srcdir)/kmenurl.cpp $(srcdir)/kmenfile.cpp $(srcdir)/kmencombobox.cpp $(srcdir)/kmenmisc.cpp $(srcdir)/kmenvideo.cpp $(srcdir)/kmensound.cpp $(srcdir)/sdvdinfo.cpp $(srcdir)/advdinfo.cpp $(srcdir)/kmendvd.cpp $(srcdir)/kmenconfig.cpp $(srcdir)/kmencoder.cpp $(srcdir)/main.cpp $(srcdir)/kmencoderdlg.cpp $(srcdir)/kmencoder_meta_unload.cpp  kmencoder.moc.cpp
+kmencoder.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/kmennotset.cpp $(srcdir)/kmenerror.cpp $(srcdir)/kmenurl.cpp $(srcdir)/kmenfile.cpp $(srcdir)/kmencombobox.cpp $(srcdir)/kmenmisc.cpp $(srcdir)/kmenvideo.cpp $(srcdir)/kmensound.cpp $(srcdir)/sdvdinfo.cpp $(srcdir)/advdinfo.cpp $(srcdir)/kmendvd.cpp $(srcdir)/kmenconfig.cpp $(srcdir)/kmencoder.cpp $(srcdir)/main.cpp kmencoderdlg.cpp kmencoder_meta_unload.cpp  kmencoder.moc.cpp
 	@echo 'creating kmencoder.all_cpp.cpp ...'; \
 	rm -f kmencoder.all_cpp.files kmencoder.all_cpp.final; \
 	echo "#define KDE_USE_FINAL 1" >> kmencoder.all_cpp.final; \
