@@ -2,7 +2,7 @@
 
 SUBDIRS = kmencoder po doc 
 
-EXTRA_DIST = kmencoder.kdevprj admin AUTHORS COPYING ChangeLog INSTALL README TODO kmencoder.lsm 
+EXTRA_DIST = kmencoder.kdevprj admin AUTHORS COPYING ChangeLog INSTALL README TODO kmencoder.lsm kmencoder.spec 
 
 ####### kdevelop will overwrite this part!!! (end)############
 # not a GNU package. You can remove this line, if 

@@ -228,20 +228,30 @@ qt_libraries = @qt_libraries@
 x_includes = @x_includes@
 x_libraries = @x_libraries@
 
-POFILES = AUTO
+#>- POFILES = AUTO
+#>+ 2
+POFILES = de.po es.po
+GMOFILES = de.gmo es.gmo
 mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
 CONFIG_HEADER = ../config.h
 CONFIG_CLEAN_FILES = 
 DIST_COMMON =  Makefile.am Makefile.in
 
 
-DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
+#>- DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
+#>+ 4
+KDE_DIST=de.gmo kmencoder.pot es.gmo es.po de.po 
+
+#>- DISTFILES= $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
+#>+ 1
+DISTFILES = $(GMOFILES) $(POFILES) $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
+
 
 TAR = gtar
 GZIP_ENV = --best
 #>- all: all-redirect
 #>+ 1
-all: docs-am  all-redirect
+all: all-nls docs-am  all-redirect
 .SUFFIXES:
 $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
 #>- 	cd $(top_srcdir) && $(AUTOMAKE) --gnu po/Makefile
@@ -261,7 +271,9 @@ distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
 
 subdir = po
 
-distdir: $(DISTFILES)
+#>- distdir: $(DISTFILES)
+#>+ 1
+distdir: distdir-nls  $(DISTFILES)
 	here=`cd $(top_builddir) && pwd`; \
 	top_distdir=`cd $(top_distdir) && pwd`; \
 	distdir=`cd $(distdir) && pwd`; \
@@ -288,14 +300,18 @@ installcheck: installcheck-am
 install-exec-am:
 install-exec: install-exec-am
 
-install-data-am:
+#>- install-data-am:
+#>+ 1
+install-data-am: install-nls 
 install-data: install-data-am
 
 install-am: all-am
 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
 install: install-am
 uninstall-am:
-uninstall: uninstall-am
+#>- uninstall: uninstall-am
+#>+ 1
+uninstall: uninstall-nls  uninstall-am
 all-am: Makefile
 all-redirect: all-am
 install-strip:
@@ -331,7 +347,9 @@ maintainer-clean-am:  maintainer-clean-generic distclean-am
 	@echo "This command is intended for maintainers to use;"
 	@echo "it deletes files that may require special tools to rebuild."
 
-maintainer-clean: maintainer-clean-am
+#>- maintainer-clean: maintainer-clean-am
+#>+ 1
+maintainer-clean: clean-nls  maintainer-clean-am
 
 .PHONY: tags distdir info-am info dvi-am dvi check check-am \
 	installcheck-am installcheck install-exec-am install-exec \
@@ -344,6 +362,49 @@ maintainer-clean: maintainer-clean-am
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:
+
+#>+ 7
+de.gmo: de.po
+	rm -f de.gmo; $(GMSGFMT) -o de.gmo $(srcdir)/de.po
+	test ! -f de.gmo || touch de.gmo
+es.gmo: es.po
+	rm -f es.gmo; $(GMSGFMT) -o es.gmo $(srcdir)/es.po
+	test ! -f es.gmo || touch es.gmo
+
+#>+ 3
+clean-nls:
+	-rm -f  de.gmo es.gmo
+
+#>+ 8
+install-nls:
+	@for base in de es ; do \
+	  echo $(INSTALL_DATA) $$base.gmo $(DESTDIR)$(kde_locale)/$$base/LC_MESSAGES/$(PACKAGE).mo ;\
+	  $(mkinstalldirs) $(DESTDIR)$(kde_locale)/$$base/LC_MESSAGES ; \
+	  test ! -f $$base.gmo || $(INSTALL_DATA) $$base.gmo $(DESTDIR)$(kde_locale)/$$base/LC_MESSAGES/$(PACKAGE).mo ;\
+	done
+
+
+#>+ 4
+uninstall-nls:
+	rm -f $(DESTDIR)$(kde_locale)/de/LC_MESSAGES/$(PACKAGE).mo
+	rm -f $(DESTDIR)$(kde_locale)/es/LC_MESSAGES/$(PACKAGE).mo
+
+#>+ 2
+all-nls: $(GMOFILES)
+
+#>+ 8
+distdir-nls:$(GMOFILES)
+	for file in $(POFILES); do \
+	  cp $(srcdir)/$$file $(distdir); \
+	done
+	for file in $(GMOFILES); do \
+	  cp $(srcdir)/$$file $(distdir); \
+	done
+
+#>+ 4
+merge:
+	$(MAKE) -f $(top_srcdir)/admin/Makefile.common package-merge POFILES="${POFILES}" PACKAGE=${PACKAGE}
+
 
 #>+ 2
 docs-am:

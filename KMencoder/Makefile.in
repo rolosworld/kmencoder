@@ -228,7 +228,7 @@ x_libraries = @x_libraries@
 
 SUBDIRS = kmencoder po doc 
 
-EXTRA_DIST = kmencoder.kdevprj admin AUTHORS COPYING ChangeLog INSTALL README TODO kmencoder.lsm 
+EXTRA_DIST = kmencoder.kdevprj admin AUTHORS COPYING ChangeLog INSTALL README TODO kmencoder.lsm kmencoder.spec 
 
 ####### kdevelop will overwrite this part!!! (end)############
 # not a GNU package. You can remove this line, if 
@@ -247,7 +247,7 @@ DIST_COMMON =  README ./stamp-h.in AUTHORS COPYING ChangeLog INSTALL \
 
 #>- DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
 #>+ 4
-KDE_DIST=Makefile.dist subdirs configure.in.in kmencoder.kdevses messages.log configure.files 
+KDE_DIST=tags Makefile.dist subdirs configure.in.in kmencoder.kdevses messages.log kmencoder.doxygen configure.files 
 
 DISTFILES= $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
 

@@ -21,18 +21,18 @@ addcxxflags=
 bin_program=kmencoder
 cflags=
 cppflags=
-cxxflags=\s-O0 -g3 -Wall
+cxxflags=\s-O0 -Wall
 ldadd=\s$(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
-ldflags=\s   \s
+ldflags=\s        \s
 
 [General]
-AMChanged=false
-author=Rolando
+AMChanged=true
+author=Rolando Gonzalez
 configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux\s
 email=rolando8@prtc.net
 kdevprj_version=1.3
 lfv_open_groups=GNU,User Interface
-make_options=\s-j1
+make_options=\s-e -w -s -j1
 makefiles=Makefile.am,kmencoder/Makefile.am,doc/Makefile.am,doc/en/Makefile.am,po/Makefile.am
 modifyMakefiles=true
 project_name=KMencoder
@@ -50,6 +50,15 @@ install=false
 install_location=
 type=DATA
 
+[KPP]
+kpp_appgrp=multimedia
+kpp_bldroot=--prefix=/usr
+kpp_icon=0
+kpp_license=5
+kpp_summary=MPlayer/MEncoder FrontEnd
+kpp_url=http://www.sourceforge.net/projects/kmencoder
+kpp_version=0.1.2
+
 [LFV Groups]
 GNU=AUTHORS,COPYING,ChangeLog,INSTALL,README,TODO,NEWS
 Headers=*.h,*.hh,*.hxx,*.hpp,*.H
@@ -60,7 +69,7 @@ User Interface=*.kdevdlg,*.ui,*.rc,*.dlg
 groups=Headers,Sources,User Interface,Translations,GNU,Others
 
 [Makefile.am]
-files=kmencoder.kdevprj,admin,AUTHORS,COPYING,ChangeLog,INSTALL,README,TODO,kmencoder.lsm
+files=kmencoder.kdevprj,admin,AUTHORS,COPYING,ChangeLog,INSTALL,README,TODO,kmencoder.lsm,kmencoder.spec
 sub_dirs=kmencoder,po,doc
 type=normal
 
@@ -104,6 +113,12 @@ install_location=
 type=DATA
 
 [kmencoder.lsm]
+dist=true
+install=false
+install_location=
+type=DATA
+
+[kmencoder.spec]
 dist=true
 install=false
 install_location=
@@ -319,5 +334,18 @@ install_location=
 type=HEADER
 
 [po/Makefile.am]
+files=po/es.po,po/de.po
 sub_dirs=
 type=po
+
+[po/de.po]
+dist=false
+install=false
+install_location=
+type=PO
+
+[po/es.po]
+dist=false
+install=false
+install_location=
+type=PO

@@ -1,0 +1,465 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2002-07-24 10:26-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr ""
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+
+#: kmencoder.moc.cpp:34 kmencoder.moc.cpp:42 main.cpp:25 main.cpp:38
+msgid "KMencoder"
+msgstr ""
+
+#: kmencoderdlg.cpp:26944
+msgid "Kmencoder"
+msgstr ""
+
+#: kmencoderdlg.cpp:26973
+msgid "Main"
+msgstr ""
+
+#: kmencoderdlg.cpp:26981
+msgid "Source"
+msgstr ""
+
+#: kmencoderdlg.cpp:26991
+msgid "Select Source"
+msgstr ""
+
+#: kmencoderdlg.cpp:26993 kmencoderdlg.cpp:27048
+msgid "PlayList"
+msgstr ""
+
+#: kmencoderdlg.cpp:26994 kmencoderdlg.cpp:27065
+msgid "URL"
+msgstr ""
+
+#: kmencoderdlg.cpp:26995 kmencoderdlg.cpp:27102
+msgid "TV"
+msgstr ""
+
+#: kmencoderdlg.cpp:26996 kmencoderdlg.cpp:27092
+msgid "VCD"
+msgstr ""
+
+#: kmencoderdlg.cpp:26997 kmencoderdlg.cpp:27328
+msgid "DVD"
+msgstr ""
+
+#: kmencoderdlg.cpp:27007
+msgid "Output"
+msgstr ""
+
+#: kmencoderdlg.cpp:27019
+msgid "IOPUT"
+msgstr ""
+
+#: kmencoderdlg.cpp:27026
+msgid "File Options"
+msgstr ""
+
+#: kmencoderdlg.cpp:27045
+msgid "PlayList Options"
+msgstr ""
+
+#: kmencoderdlg.cpp:27055
+msgid "URL Options"
+msgstr ""
+
+#: kmencoderdlg.cpp:27072
+msgid "VCD Options"
+msgstr ""
+
+#: kmencoderdlg.cpp:27080
+msgid "Track: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27099
+msgid "TV Options"
+msgstr ""
+
+#: kmencoderdlg.cpp:27110
+msgid "DVD Options"
+msgstr ""
+
+#: kmencoderdlg.cpp:27122
+msgid "Video Options"
+msgstr ""
+
+#: kmencoderdlg.cpp:27138
+msgid "Title: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27150
+msgid "Angle: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27164
+msgid "Chapters: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27173
+msgid "to"
+msgstr ""
+
+#: kmencoderdlg.cpp:27186
+msgid "Subtitle Language: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27206
+msgid "Subtitle Position: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27210
+msgid "E&nable SubTitles"
+msgstr ""
+
+#: kmencoderdlg.cpp:27253
+#, c-format
+msgid "%"
+msgstr ""
+
+#: kmencoderdlg.cpp:27262
+msgid "Audio Options"
+msgstr ""
+
+#: kmencoderdlg.cpp:27276
+msgid "Select Audio Channel: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27293
+msgid "Audio Language: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27297
+msgid "Audio Format: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27350
+msgid "Image Size: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27359 kmencoderdlg.cpp:27623
+msgid "Auto"
+msgstr ""
+
+#: kmencoderdlg.cpp:27360
+msgid "Aspect"
+msgstr ""
+
+#: kmencoderdlg.cpp:27361
+msgid "Width/Auto Height"
+msgstr ""
+
+#: kmencoderdlg.cpp:27362
+msgid "Width/Height"
+msgstr ""
+
+#: kmencoderdlg.cpp:27367
+msgid "16:9"
+msgstr ""
+
+#: kmencoderdlg.cpp:27368
+msgid "4:3"
+msgstr ""
+
+#: kmencoderdlg.cpp:27378
+msgid "Width Height Options"
+msgstr ""
+
+#: kmencoderdlg.cpp:27388
+msgid "Width: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27401
+msgid "Height: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27421 kmencoderdlg.cpp:27564
+msgid "Output Quality"
+msgstr ""
+
+#: kmencoderdlg.cpp:27433 kmencoderdlg.cpp:27576
+msgid "Exact Copy"
+msgstr ""
+
+#: kmencoderdlg.cpp:27434
+msgid "DivX 4"
+msgstr ""
+
+#: kmencoderdlg.cpp:27435
+msgid "lavc"
+msgstr ""
+
+#: kmencoderdlg.cpp:27444 kmencoderdlg.cpp:27600
+msgid "Bitrate: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27461
+msgid "<4-16000> Kbit"
+msgstr ""
+
+#: kmencoderdlg.cpp:27465
+msgid "<16001-24000000> bit"
+msgstr ""
+
+#: kmencoderdlg.cpp:27478
+msgid "DivX 4 Options"
+msgstr ""
+
+#: kmencoderdlg.cpp:27488
+msgid "Quality: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27503
+msgid "lavc Options"
+msgstr ""
+
+#: kmencoderdlg.cpp:27515
+msgid "Codec: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27519
+msgid "DivX 4/5"
+msgstr ""
+
+#: kmencoderdlg.cpp:27520
+msgid "DivX 3"
+msgstr ""
+
+#: kmencoderdlg.cpp:27521
+msgid "Old Real Video"
+msgstr ""
+
+#: kmencoderdlg.cpp:27522
+msgid "Mpeg1"
+msgstr ""
+
+#: kmencoderdlg.cpp:27523
+msgid "Motion JPG"
+msgstr ""
+
+#: kmencoderdlg.cpp:27524
+msgid "H263"
+msgstr ""
+
+#: kmencoderdlg.cpp:27525
+msgid "H263 Plus"
+msgstr ""
+
+#: kmencoderdlg.cpp:27530
+msgid "&High Quality Mode"
+msgstr ""
+
+#: kmencoderdlg.cpp:27542
+msgid "Video"
+msgstr ""
+
+#: kmencoderdlg.cpp:27558
+msgid "&Audio OFF"
+msgstr ""
+
+#: kmencoderdlg.cpp:27577
+msgid "MP3"
+msgstr ""
+
+#: kmencoderdlg.cpp:27586
+msgid "lame MP3 Options"
+msgstr ""
+
+#: kmencoderdlg.cpp:27604
+msgid "Variable"
+msgstr ""
+
+#: kmencoderdlg.cpp:27605
+msgid "Average"
+msgstr ""
+
+#: kmencoderdlg.cpp:27606
+msgid "Constant"
+msgstr ""
+
+#: kmencoderdlg.cpp:27619
+msgid "Mode: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27624
+msgid "Stereo"
+msgstr ""
+
+#: kmencoderdlg.cpp:27625
+msgid "Joint Stereo"
+msgstr ""
+
+#: kmencoderdlg.cpp:27626
+msgid "Dual Channel"
+msgstr ""
+
+#: kmencoderdlg.cpp:27627
+msgid "Mono"
+msgstr ""
+
+#: kmencoderdlg.cpp:27635
+msgid "Compression Ratio: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27652
+msgid "Volume Gain: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27672
+msgid "Sound"
+msgstr ""
+
+#: kmencoderdlg.cpp:27684
+msgid "Cache: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27694
+msgid "KBytes"
+msgstr ""
+
+#: kmencoderdlg.cpp:27703
+msgid "Cdrom Device: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27714
+msgid "DVD Device: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27726
+msgid "No S&kip"
+msgstr ""
+
+#: kmencoderdlg.cpp:27730
+msgid "&Verbose"
+msgstr ""
+
+#: kmencoderdlg.cpp:27735
+msgid "&End Position"
+msgstr ""
+
+#: kmencoderdlg.cpp:27744
+msgid "End Position Options"
+msgstr ""
+
+#: kmencoderdlg.cpp:27756
+msgid "End Position: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27760
+msgid "Mega Bytes"
+msgstr ""
+
+#: kmencoderdlg.cpp:27761
+msgid "Time"
+msgstr ""
+
+#: kmencoderdlg.cpp:27768
+msgid "mb"
+msgstr ""
+
+#: kmencoderdlg.cpp:27776
+msgid "MBytes"
+msgstr ""
+
+#: kmencoderdlg.cpp:27785
+msgid "Time: "
+msgstr ""
+
+#: kmencoderdlg.cpp:27803 kmencoderdlg.cpp:27813 kmencoderdlg.cpp:27830
+#: kmencoderdlg.cpp:27838
+msgid ":"
+msgstr ""
+
+#: kmencoderdlg.cpp:27826
+msgid "H"
+msgstr ""
+
+#: kmencoderdlg.cpp:27834
+msgid "M"
+msgstr ""
+
+#: kmencoderdlg.cpp:27842
+msgid "S"
+msgstr ""
+
+#: kmencoderdlg.cpp:27853
+msgid "Misc"
+msgstr ""
+
+#: kmencoderdlg.cpp:27863
+msgid "Authors:"
+msgstr ""
+
+#: kmencoderdlg.cpp:27867
+msgid "Name"
+msgstr ""
+
+#: kmencoderdlg.cpp:27868
+msgid "Email"
+msgstr ""
+
+#: kmencoderdlg.cpp:27870
+msgid "Rolando Gonzalez"
+msgstr ""
+
+#: kmencoderdlg.cpp:27871
+msgid "<rolando8@prtc.net>"
+msgstr ""
+
+#: kmencoderdlg.cpp:27874
+msgid "Josue Irizarry"
+msgstr ""
+
+#: kmencoderdlg.cpp:27875
+msgid "<josue@vidalinux.com>"
+msgstr ""
+
+#: kmencoderdlg.cpp:27914
+msgid "&Encode"
+msgstr ""
+
+#: kmencoderdlg.cpp:27918
+msgid "&Play"
+msgstr ""
+
+#: kmencoderdlg.cpp:27925
+msgid "S&top"
+msgstr ""
+
+#: kmencoderdlg.cpp:27951
+msgid "C&lear"
+msgstr ""
+
+#: kmencoderdlg.cpp:27957
+msgid "Done List"
+msgstr ""
+
+#: kmencoderdlg.cpp:27967
+msgid "StdOut"
+msgstr ""
+
+#: kmencoderdlg.cpp:27975
+msgid "StdErr"
+msgstr ""
