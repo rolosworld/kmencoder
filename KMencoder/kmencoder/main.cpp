@@ -36,11 +36,15 @@ int main(int argc, char *argv[])
 {
   KMenConfig::proc_loaded = 0;
   KMenConfig::stopped = 0;
-  KAboutData aboutData( "kmencoder", I18N_NOOP("KMencoder"),
-    VERSION, description, KAboutData::License_GPL,
-    "(c) 2002, Rolando Gonzalez", 0, 0, "rolando8@prtc.net");
-  aboutData.addAuthor("Rolando Gonzalez",0, "rolando8@prtc.net");
-  aboutData.addAuthor("Josue Irizarry",0, "josue@vidalinux.com");
+
+  KAboutData aboutData( "kmencoder", I18N_NOOP( "KMencoder" ),
+                                                VERSION, description, KAboutData::License_GPL,
+                                                "(c) 2002, Rolando Gonzalez", 0 , 0 , "rolando8@prtc.net" );
+
+  aboutData.addAuthor( "Rolando Gonzalez", 0, "rolando8@prtc.net" );
+
+  aboutData.addAuthor( "Josue Irizarry", 0, "josue@vidalinux.com" );
+  aboutData.setTranslator( I18N_NOOP( "_: NAME OF TRANSLATORS\nYour names" ) ,I18N_NOOP( "_: EMAIL OF TRANSLATORS\nYour emails" ) );
 
   KCmdLineArgs::init( argc, argv, &aboutData );
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.

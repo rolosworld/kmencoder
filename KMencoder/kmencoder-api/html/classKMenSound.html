@@ -20,6 +20,9 @@
 <tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classKMenSound.html#a5">getSoundON</a> ()</td></tr>
 <tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenSound.html#a6">setSoundArguments</a> (QProcess *procs, <a class="el" href="classKMenComboBox.html">KMenComboBox</a> sel)</td></tr>
 <tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenSound.html#a7">setSoundEncode_enabled</a> (bool snd_enc)</td></tr>
+<tr><td nowrap align=right valign=top><a name="a8" doxytag="KMenSound::setSoundPass"></a>
+void&nbsp;</td><td valign=bottom><b>setSoundPass</b> (bool enabled)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenSound.html#a9">setSoundPassCount</a> (unsigned short count)</td></tr>
 <tr><td colspan=2><br><h2>Protected Attributes</h2></td></tr>
 <tr><td nowrap align=right valign=top><a name="n0" doxytag="KMenSound::sound_on"></a>
 bool&nbsp;</td><td valign=bottom><b>sound_on</b></td></tr>
@@ -27,6 +30,10 @@ bool&nbsp;</td><td valign=bottom><b>sound_on</b></td></tr>
 QString*&nbsp;</td><td valign=bottom><b>sound_lame_opts</b></td></tr>
 <tr><td nowrap align=right valign=top><a name="n2" doxytag="KMenSound::sound_encode"></a>
 bool&nbsp;</td><td valign=bottom><b>sound_encode</b></td></tr>
+<tr><td nowrap align=right valign=top><a name="n3" doxytag="KMenSound::sound_pass_count"></a>
+unsigned short&nbsp;</td><td valign=bottom><b>sound_pass_count</b></td></tr>
+<tr><td nowrap align=right valign=top><a name="n4" doxytag="KMenSound::sound_pass"></a>
+bool&nbsp;</td><td valign=bottom><b>sound_pass</b></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 <dl compact><dt>
@@ -238,9 +245,38 @@ bool <em>sound</em>&nbsp;)
 No descriptions     </td>
   </tr>
 </table>
+<a name="a9" doxytag="KMenSound::setSoundPassCount"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void KMenSound::setSoundPassCount (
+          </b></td>
+          <td valign="bottom"><b>
+unsigned short <em>count</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+No descriptions     </td>
+  </tr>
+</table>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="kmensound_8h-source.html">kmensound.h</a></ul>
-<hr><address><small>Generated at Wed Jul 24 08:20:49 2002 by
+<hr><address><small>Generated at Mon Jul 29 23:59:15 2002 by
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.gif" alt="doxygen" align="middle" border=0 
 width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,

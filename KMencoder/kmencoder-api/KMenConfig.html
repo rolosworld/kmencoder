@@ -47,10 +47,26 @@
 </LI>
 <LI>bool &nbsp;<b><A HREF="#ref10">setOutputFileArguments</A></b> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qprocess.html">QProcess</A> *procs ) 
 </LI>
-</ul><h4>Protected Members</h4><ul><LI>QString *<b><A HREF="#ref11">enabled_input</A></b></LI>
-<LI>QString *<b><A HREF="#ref12">exec</A></b></LI>
-<LI>QString *<b><A HREF="#ref13">out_file_name</A></b></LI>
-<LI>bool <b><A HREF="#ref14">encode</A></b></LI>
+<LI>void &nbsp;<b><A HREF="#ref11">deleteTmpFiles</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref12">setConfPass</A></b> ( bool enabled ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref13">setConfOutRename</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">setConfDir</A></b> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> dir ) 
+</LI>
+<LI><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<b><A HREF="#ref15">getConfDir</A></b> () 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static unsigned short <b><A HREF="#ref16">proc_loaded</A></b></LI>
+<LI>static unsigned short <b><A HREF="#ref17">stopped</A></b></LI>
+</ul><h4>Protected Members</h4><ul><LI>QString *<b><A HREF="#ref18">enabled_input</A></b></LI>
+<LI>QString *<b><A HREF="#ref19">exec</A></b></LI>
+<LI>QString *<b><A HREF="#ref20">out_file_name</A></b></LI>
+<LI>bool <b><A HREF="#ref21">encode</A></b></LI>
+<LI>bool <b><A HREF="#ref22">conf_pass</A></b></LI>
+<LI>QString *<b><A HREF="#ref23">true_out_file_name</A></b></LI>
+<LI>QString *<b><A HREF="#ref24">tmp</A></b></LI>
+<LI>QDir *<b><A HREF="#ref25">d</A></b></LI>
 </ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
 </p>
 <A NAME="KMenConfig"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>KMenConfig</strong> ()
@@ -63,9 +79,20 @@
 <br></td><td align="right"><h3><strong>setPreview</strong></h3></td></tr></table><p></p><A NAME="setOutputFileName"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setOutputFileName</strong> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> file_name )
 <br></td><td align="right"><h3><strong>setOutputFileName</strong></h3></td></tr></table><p></p><A NAME="getOutputFileName"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<strong>getOutputFileName</strong> ()
 <br></td><td align="right"><h3><strong>getOutputFileName</strong></h3></td></tr></table><p></p><A NAME="setOutputFileArguments"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setOutputFileArguments</strong> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qprocess.html">QProcess</A> *procs )
-<br></td><td align="right"><h3><strong>setOutputFileArguments</strong></h3></td></tr></table><p></p><A NAME="enabled_input"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>enabled_input</strong>
-</td><td align="right"><h3><strong>enabled_input</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="exec"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>exec</strong>
-</td><td align="right"><h3><strong>exec</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="out_file_name"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>out_file_name</strong>
-</td><td align="right"><h3><strong>out_file_name</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="encode"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>encode</strong>
-</td><td align="right"><h3><strong>encode</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR><UL><LI><i>Author</i>: Rolando
-  </LI><LI><i>Generated</i>: rolo on rolo on Wed Jul 24 08:18:14 2002, using kdoc 2.0a54.</LI></UL></BODY></HTML>
+<br></td><td align="right"><h3><strong>setOutputFileArguments</strong></h3></td></tr></table><p></p><A NAME="deleteTmpFiles"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>deleteTmpFiles</strong> ()
+<br></td><td align="right"><h3><strong>deleteTmpFiles</strong></h3></td></tr></table><p></p><A NAME="setConfPass"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setConfPass</strong> ( bool enabled )
+<br></td><td align="right"><h3><strong>setConfPass</strong></h3></td></tr></table><p></p><A NAME="setConfOutRename"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setConfOutRename</strong> ()
+<br></td><td align="right"><h3><strong>setConfOutRename</strong></h3></td></tr></table><p></p><A NAME="setConfDir"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setConfDir</strong> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> dir )
+<br></td><td align="right"><h3><strong>setConfDir</strong></h3></td></tr></table><p></p><A NAME="getConfDir"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<strong>getConfDir</strong> ()
+<br></td><td align="right"><h3><strong>getConfDir</strong></h3></td></tr></table><p></p><A NAME="proc_loaded"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static unsigned short  <strong>proc_loaded</strong>
+</td><td align="right"><h3><strong>proc_loaded</strong></h3></td></tr></table><p></p><A NAME="stopped"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static unsigned short  <strong>stopped</strong>
+</td><td align="right"><h3><strong>stopped</strong></h3></td></tr></table><p></p><A NAME="enabled_input"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>enabled_input</strong>
+</td><td align="right"><h3><strong>enabled_input</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="exec"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>exec</strong>
+</td><td align="right"><h3><strong>exec</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="out_file_name"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>out_file_name</strong>
+</td><td align="right"><h3><strong>out_file_name</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="encode"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>encode</strong>
+</td><td align="right"><h3><strong>encode</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="conf_pass"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>conf_pass</strong>
+</td><td align="right"><h3><strong>conf_pass</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="true_out_file_name"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>true_out_file_name</strong>
+</td><td align="right"><h3><strong>true_out_file_name</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="tmp"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>tmp</strong>
+</td><td align="right"><h3><strong>tmp</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="d"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qdir.html">QDir</A> * <strong>d</strong>
+</td><td align="right"><h3><strong>d</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR><UL><LI><i>Author</i>: Rolando
+  </LI><LI><i>Generated</i>: rolo on rolo on Mon Jul 29 23:59:05 2002, using kdoc 2.0a54.</LI></UL></BODY></HTML>

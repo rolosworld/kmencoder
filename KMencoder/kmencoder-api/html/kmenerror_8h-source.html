@@ -28,18 +28,20 @@
 00020 <font class="preprocessor"></font>
 00021 <font class="preprocessor">#include &lt;qstring.h&gt;</font>
 00022 <font class="preprocessor">#include &lt;qmessagebox.h&gt;</font>
-<a name="l00027"></a><a class="code" href="classKMenError.html">00027</a> <font class="keyword">class </font><a class="code" href="classKMenError.html">KMenError</a> {
-00028 <font class="keyword">public</font>: 
-00029     KMenError( QString err );
-00030     <font class="keyword">virtual</font> ~KMenError();
-00032   <font class="keyword">virtual</font> <font class="keywordtype">void</font> <a class="code" href="classKMenError.html#a2">PrintError</a>();
-00033 
-00034 <font class="keyword">protected</font>: <font class="comment">// Protected attributes</font>
-00036 <font class="comment"></font>  QString err_str;
-00037 };
-00038 
-00039 <font class="preprocessor">#endif</font>
-</font></pre></div><hr><address><small>Generated at Wed Jul 24 08:20:49 2002 by
+00023 <font class="preprocessor">#include &lt;klocale.h&gt;</font>
+00024 
+<a name="l00029"></a><a class="code" href="classKMenError.html">00029</a> <font class="keyword">class </font><a class="code" href="classKMenError.html">KMenError</a> {
+00030 <font class="keyword">public</font>: 
+00031     KMenError( QString err );
+00032     <font class="keyword">virtual</font> ~KMenError();
+00034   <font class="keyword">virtual</font> <font class="keywordtype">void</font> <a class="code" href="classKMenError.html#a2">PrintError</a>();
+00035 
+00036 <font class="keyword">protected</font>: <font class="comment">// Protected attributes</font>
+00038 <font class="comment"></font>  QString err_str;
+00039 };
+00040 
+00041 <font class="preprocessor">#endif</font>
+</font></pre></div><hr><address><small>Generated at Mon Jul 29 23:59:15 2002 by
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.gif" alt="doxygen" align="middle" border=0 
 width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,

@@ -29,15 +29,17 @@
 00021 <font class="preprocessor">#include &lt;kmenerror.h&gt;</font>
 00022 <font class="preprocessor">#include &lt;qstring.h&gt;</font>
 00023 <font class="preprocessor">#include &lt;qmessagebox.h&gt;</font>
-<a name="l00028"></a><a class="code" href="classKMenNotSet.html">00028</a> <font class="keyword">class </font><a class="code" href="classKMenNotSet.html">KMenNotSet</a> : <font class="keyword">public</font> <a class="code" href="classKMenError.html">KMenError</a>  {
-00029 <font class="keyword">public</font>: 
-00030     KMenNotSet( QString err );
-00031     <font class="keyword">virtual</font> ~KMenNotSet();
-00033   <font class="keyword">virtual</font> <font class="keywordtype">void</font> <a class="code" href="classKMenError.html#a2">PrintError</a>();
-00034 };
-00035 
-00036 <font class="preprocessor">#endif</font>
-</font></pre></div><hr><address><small>Generated at Wed Jul 24 08:20:49 2002 by
+00024 <font class="preprocessor">#include &lt;klocale.h&gt;</font>
+00025 
+<a name="l00030"></a><a class="code" href="classKMenNotSet.html">00030</a> <font class="keyword">class </font><a class="code" href="classKMenNotSet.html">KMenNotSet</a> : <font class="keyword">public</font> <a class="code" href="classKMenError.html">KMenError</a>  {
+00031 <font class="keyword">public</font>: 
+00032     KMenNotSet( QString err );
+00033     <font class="keyword">virtual</font> ~KMenNotSet();
+00035   <font class="keyword">virtual</font> <font class="keywordtype">void</font> <a class="code" href="classKMenError.html#a2">PrintError</a>();
+00036 };
+00037 
+00038 <font class="preprocessor">#endif</font>
+</font></pre></div><hr><address><small>Generated at Mon Jul 29 23:59:15 2002 by
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.gif" alt="doxygen" align="middle" border=0 
 width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,

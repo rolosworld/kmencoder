@@ -47,36 +47,46 @@
 00048   QString <a class="code" href="classKMenVideo.html#a6">getVideoHeight</a>();
 00049 
 00051   <font class="keywordtype">void</font> <a class="code" href="classKMenVideo.html#a7">setVideoLavcOpts</a>( QString codec,
-00052                          <font class="keywordtype">bool</font> quality,
-00053                          QString bitrate );
-00054 
-00056   <font class="keywordtype">void</font> <a class="code" href="classKMenVideo.html#a8">setVideoDivx4Opts</a>( QString quality,
-00057                           QString bitrate );
-00058 
-00060   QString <a class="code" href="classKMenVideo.html#a9">getVideoLavcOpts</a>();
-00061 
-00063   QString <a class="code" href="classKMenVideo.html#a10">getVideoDivx4Opts</a>();
-00064 
-00066   QString <a class="code" href="classKMenVideo.html#a11">getVideoAspectMode</a>();
-00068   <font class="keywordtype">void</font> <a class="code" href="classKMenVideo.html#a12">setVideoArguments</a>( QProcess *procs, <a class="code" href="classKMenComboBox.html">KMenComboBox</a> sel );
-00070   <font class="keywordtype">void</font> <a class="code" href="classKMenVideo.html#a13">setVideoEncode_enabled</a>( <font class="keywordtype">bool</font> enabled );
-00071 
-00072 <font class="keyword">protected</font>: <font class="comment">// Protected attributes</font>
-00073 
-00075   QString *video_aspect;
-00076 
-00078   QString *video_lavc_opts;
-00079 
-00081   QString *video_divx4_opts;
-00082 
-00084   QString *video_width;
+00052                          <font class="keywordtype">bool</font> quality );
+00053 
+00055   <font class="keywordtype">void</font> <a class="code" href="classKMenVideo.html#a8">setVideoDivx4Opts</a>( QString quality );
+00056 
+00058   QString <a class="code" href="classKMenVideo.html#a9">getVideoLavcOpts</a>();
+00059 
+00061   QString <a class="code" href="classKMenVideo.html#a10">getVideoDivx4Opts</a>();
+00062 
+00064   QString <a class="code" href="classKMenVideo.html#a11">getVideoAspectMode</a>();
+00066   <font class="keywordtype">void</font> <a class="code" href="classKMenVideo.html#a12">setVideoArguments</a>( QProcess *procs, <a class="code" href="classKMenComboBox.html">KMenComboBox</a> sel );
+00068   <font class="keywordtype">void</font> <a class="code" href="classKMenVideo.html#a13">setVideoEncode_enabled</a>( <font class="keywordtype">bool</font> enabled );
+00070   <font class="keywordtype">bool</font> <a class="code" href="classKMenVideo.html#a14">getVideoPass</a>();
+00072   <font class="keywordtype">void</font> <a class="code" href="classKMenVideo.html#a15">setVideoPass</a>( <font class="keywordtype">bool</font> enabled );
+00074   <font class="keywordtype">void</font> <a class="code" href="classKMenVideo.html#a16">setVideoBitrate</a>( QString bitrate );
+00076   QString <a class="code" href="classKMenVideo.html#a17">getVideoBitrate</a>();
+00078   <font class="keywordtype">unsigned</font> <font class="keywordtype">short</font> <a class="code" href="classKMenVideo.html#a18">getVideoPassCount</a>();
+00080   <font class="keywordtype">void</font> <a class="code" href="classKMenVideo.html#a19">setVideoPassCount</a>( <font class="keywordtype">unsigned</font> <font class="keywordtype">short</font> count );
+00082   <font class="keywordtype">bool</font> <a class="code" href="classKMenVideo.html#a20">getVideoPassRenamed</a>();
+00084   <font class="keywordtype">void</font> <a class="code" href="classKMenVideo.html#a21">setVideoPassRenamed</a>( <font class="keywordtype">bool</font> done );
 00085 
-00087   <font class="keywordtype">bool</font> video_encode;
-00089   QString *video_height;
-00090 };
-00091 
-00092 <font class="preprocessor">#endif</font>
-</font></pre></div><hr><address><small>Generated at Wed Jul 24 08:20:49 2002 by
+00086 <font class="keyword">protected</font>: <font class="comment">// Protected attributes</font>
+00087 
+00089   QString *video_aspect;
+00090 
+00092   QString *video_lavc_opts;
+00093 
+00095   QString *video_divx4_opts;
+00096 
+00098   QString *video_width;
+00099 
+00101   <font class="keywordtype">bool</font> video_pass;
+00103   <font class="keywordtype">bool</font> video_encode;
+00105   QString *video_height;
+00107   <font class="keywordtype">unsigned</font> <font class="keywordtype">short</font> video_pass_count;
+00109   QString *video_bitrate;
+00111   <font class="keywordtype">bool</font> video_pass_renamed;
+00112 };
+00113 
+00114 <font class="preprocessor">#endif</font>
+</font></pre></div><hr><address><small>Generated at Mon Jul 29 23:59:15 2002 by
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.gif" alt="doxygen" align="middle" border=0 
 width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,

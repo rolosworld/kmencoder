@@ -51,16 +51,20 @@
 00052   <font class="keywordtype">void</font> <a class="code" href="classKMenSound.html#a6">setSoundArguments</a>( QProcess *procs, <a class="code" href="classKMenComboBox.html">KMenComboBox</a> sel );
 00054   <font class="keywordtype">void</font> <a class="code" href="classKMenSound.html#a7">setSoundEncode_enabled</a>( <font class="keywordtype">bool</font> snd_enc );
 00055 
-00056 <font class="keyword">protected</font>: <font class="comment">// Protected attributes</font>
-00057 
-00059   <font class="keywordtype">bool</font> sound_on;
+00057   <font class="keywordtype">void</font> setSoundPass( <font class="keywordtype">bool</font> enabled );
+00059   <font class="keywordtype">void</font> <a class="code" href="classKMenSound.html#a9">setSoundPassCount</a>( <font class="keywordtype">unsigned</font> <font class="keywordtype">short</font> count );
 00060 
-00062   QString *sound_lame_opts;
-00064   <font class="keywordtype">bool</font> sound_encode;
-00065 };
-00066 
-00067 <font class="preprocessor">#endif</font>
-</font></pre></div><hr><address><small>Generated at Wed Jul 24 08:20:49 2002 by
+00061 <font class="keyword">protected</font>: <font class="comment">// Protected attributes</font>
+00062 
+00064   <font class="keywordtype">bool</font> sound_on;
+00065 
+00067   QString *sound_lame_opts;
+00069   <font class="keywordtype">bool</font> sound_encode;
+00071   <font class="keywordtype">unsigned</font> <font class="keywordtype">short</font> sound_pass_count;
+00073   <font class="keywordtype">bool</font> sound_pass;
+00074 };
+00075 <font class="preprocessor">#endif</font>
+</font></pre></div><hr><address><small>Generated at Mon Jul 29 23:59:15 2002 by
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.gif" alt="doxygen" align="middle" border=0 
 width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,

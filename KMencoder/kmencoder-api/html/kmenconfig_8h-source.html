@@ -27,38 +27,51 @@
 00019 <font class="preprocessor"></font>
 00022 <font class="preprocessor">#include &lt;qstring.h&gt;</font>
 00023 <font class="preprocessor">#include &lt;qprocess.h&gt;</font>
-00024 
-<a name="l00025"></a><a class="code" href="classKMenConfig.html">00025</a> <font class="keyword">class </font><a class="code" href="classKMenConfig.html">KMenConfig</a> {
-00026 <font class="keyword">public</font>: 
-00027     KMenConfig();
-00028     ~KMenConfig();
-00029 
-00031   QString <a class="code" href="classKMenConfig.html#a2">getEnabled</a>();
+00024 <font class="preprocessor">#include &lt;qdir.h&gt;</font>
+00025 <font class="preprocessor">#include &lt;qmessagebox.h&gt;</font>
+00026 <font class="preprocessor">#include &lt;klocale.h&gt;</font>
+00027 
+<a name="l00028"></a><a class="code" href="classKMenConfig.html">00028</a> <font class="keyword">class </font><a class="code" href="classKMenConfig.html">KMenConfig</a> {
+00029 <font class="keyword">public</font>: 
+00030     KMenConfig();
+00031     ~KMenConfig();
 00032 
-00034   <font class="keywordtype">void</font> <a class="code" href="classKMenConfig.html#a3">setEnabled</a>( QString einput );
+00034   QString <a class="code" href="classKMenConfig.html#a2">getEnabled</a>();
 00035 
-00037   QString <a class="code" href="classKMenConfig.html#a4">getExec</a>();
+00037   <font class="keywordtype">void</font> <a class="code" href="classKMenConfig.html#a3">setEnabled</a>( QString einput );
 00038 
-00040   <font class="keywordtype">bool</font> <a class="code" href="classKMenConfig.html#a5">getPreview</a>();
+00040   QString <a class="code" href="classKMenConfig.html#a4">getExec</a>();
 00041 
-00043   <font class="keywordtype">void</font> <a class="code" href="classKMenConfig.html#a6">setPreview</a>( <font class="keywordtype">bool</font> disabled );
-00045   <font class="keywordtype">void</font> <a class="code" href="classKMenConfig.html#a7">setOutputFileName</a>( QString file_name );
-00047   QString <a class="code" href="classKMenConfig.html#a8">getOutputFileName</a>();
-00049   <font class="keywordtype">bool</font> <a class="code" href="classKMenConfig.html#a9">setOutputFileArguments</a>( QProcess *procs );
-00050 
-00051 
-00052 <font class="keyword">protected</font>: <font class="comment">// Protected attributes</font>
-00053 
-00055   QString *enabled_input;
-00056 
-00058   QString *exec;
-00059 
-00061   QString *out_file_name;
-00063   <font class="keywordtype">bool</font> encode;
-00064 };
-00065 
-00066 <font class="preprocessor">#endif</font>
-</font></pre></div><hr><address><small>Generated at Wed Jul 24 08:20:49 2002 by
+00043   <font class="keywordtype">bool</font> <a class="code" href="classKMenConfig.html#a5">getPreview</a>();
+00044 
+00046   <font class="keywordtype">void</font> <a class="code" href="classKMenConfig.html#a6">setPreview</a>( <font class="keywordtype">bool</font> disabled );
+00048   <font class="keywordtype">void</font> <a class="code" href="classKMenConfig.html#a7">setOutputFileName</a>( QString file_name );
+00050   QString <a class="code" href="classKMenConfig.html#a8">getOutputFileName</a>();
+00052   <font class="keywordtype">bool</font> <a class="code" href="classKMenConfig.html#a9">setOutputFileArguments</a>( QProcess *procs );
+00055   <font class="keywordtype">void</font> <a class="code" href="classKMenConfig.html#a10">deleteTmpFiles</a>();
+00056   <font class="keywordtype">void</font> setConfPass( <font class="keywordtype">bool</font> enabled );
+00058   <font class="keywordtype">void</font> <a class="code" href="classKMenConfig.html#a12">setConfOutRename</a>();
+00060   <font class="keywordtype">void</font> <a class="code" href="classKMenConfig.html#a13">setConfDir</a>( QString dir );
+00062   QString <a class="code" href="classKMenConfig.html#a14">getConfDir</a>();
+00064   <font class="keyword">static</font> <font class="keywordtype">unsigned</font> <font class="keywordtype">short</font> proc_loaded;
+00065   <font class="keyword">static</font> <font class="keywordtype">unsigned</font> <font class="keywordtype">short</font> stopped;
+00066 
+00067 <font class="keyword">protected</font>: <font class="comment">// Protected attributes</font>
+00068 
+00070   QString *enabled_input;
+00071 
+00073   QString *exec;
+00074 
+00076   QString *out_file_name;
+00078   <font class="keywordtype">bool</font> encode;
+00080   <font class="keywordtype">bool</font> conf_pass;
+00082   QString *true_out_file_name;
+00084   QString *tmp;
+00086   QDir *d;
+00087 };
+00088 
+00089 <font class="preprocessor">#endif</font>
+</font></pre></div><hr><address><small>Generated at Mon Jul 29 23:59:15 2002 by
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.gif" alt="doxygen" align="middle" border=0 
 width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,

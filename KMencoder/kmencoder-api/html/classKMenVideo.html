@@ -19,13 +19,21 @@
 <tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a4">setVideoAspectMode</a> (QString aspect)</td></tr>
 <tr><td nowrap align=right valign=top>QString&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a5">getVideoWidth</a> ()</td></tr>
 <tr><td nowrap align=right valign=top>QString&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a6">getVideoHeight</a> ()</td></tr>
-<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a7">setVideoLavcOpts</a> (QString codec, bool quality, QString bitrate)</td></tr>
-<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a8">setVideoDivx4Opts</a> (QString quality, QString bitrate)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a7">setVideoLavcOpts</a> (QString codec, bool quality)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a8">setVideoDivx4Opts</a> (QString quality)</td></tr>
 <tr><td nowrap align=right valign=top>QString&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a9">getVideoLavcOpts</a> ()</td></tr>
 <tr><td nowrap align=right valign=top>QString&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a10">getVideoDivx4Opts</a> ()</td></tr>
 <tr><td nowrap align=right valign=top>QString&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a11">getVideoAspectMode</a> ()</td></tr>
 <tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a12">setVideoArguments</a> (QProcess *procs, <a class="el" href="classKMenComboBox.html">KMenComboBox</a> sel)</td></tr>
 <tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a13">setVideoEncode_enabled</a> (bool enabled)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a14">getVideoPass</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a15">setVideoPass</a> (bool enabled)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a16">setVideoBitrate</a> (QString bitrate)</td></tr>
+<tr><td nowrap align=right valign=top>QString&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a17">getVideoBitrate</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>unsigned short&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a18">getVideoPassCount</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a19">setVideoPassCount</a> (unsigned short count)</td></tr>
+<tr><td nowrap align=right valign=top>bool&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a20">getVideoPassRenamed</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="classKMenVideo.html#a21">setVideoPassRenamed</a> (bool done)</td></tr>
 <tr><td colspan=2><br><h2>Protected Attributes</h2></td></tr>
 <tr><td nowrap align=right valign=top><a name="n0" doxytag="KMenVideo::video_aspect"></a>
 QString*&nbsp;</td><td valign=bottom><b>video_aspect</b></td></tr>
@@ -35,10 +43,18 @@ QString*&nbsp;</td><td valign=bottom><b>video_lavc_opts</b></td></tr>
 QString*&nbsp;</td><td valign=bottom><b>video_divx4_opts</b></td></tr>
 <tr><td nowrap align=right valign=top><a name="n3" doxytag="KMenVideo::video_width"></a>
 QString*&nbsp;</td><td valign=bottom><b>video_width</b></td></tr>
-<tr><td nowrap align=right valign=top><a name="n4" doxytag="KMenVideo::video_encode"></a>
+<tr><td nowrap align=right valign=top><a name="n4" doxytag="KMenVideo::video_pass"></a>
+bool&nbsp;</td><td valign=bottom><b>video_pass</b></td></tr>
+<tr><td nowrap align=right valign=top><a name="n5" doxytag="KMenVideo::video_encode"></a>
 bool&nbsp;</td><td valign=bottom><b>video_encode</b></td></tr>
-<tr><td nowrap align=right valign=top><a name="n5" doxytag="KMenVideo::video_height"></a>
+<tr><td nowrap align=right valign=top><a name="n6" doxytag="KMenVideo::video_height"></a>
 QString*&nbsp;</td><td valign=bottom><b>video_height</b></td></tr>
+<tr><td nowrap align=right valign=top><a name="n7" doxytag="KMenVideo::video_pass_count"></a>
+unsigned short&nbsp;</td><td valign=bottom><b>video_pass_count</b></td></tr>
+<tr><td nowrap align=right valign=top><a name="n8" doxytag="KMenVideo::video_bitrate"></a>
+QString*&nbsp;</td><td valign=bottom><b>video_bitrate</b></td></tr>
+<tr><td nowrap align=right valign=top><a name="n9" doxytag="KMenVideo::video_pass_renamed"></a>
+bool&nbsp;</td><td valign=bottom><b>video_pass_renamed</b></td></tr>
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
 <dl compact><dt>
@@ -54,6 +70,35 @@ Rolando </dl>
         <tr>
           <td nowrap valign="top"><b> 
 QString KMenVideo::getVideoAspectMode (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+No descriptions     </td>
+  </tr>
+</table>
+<a name="a17" doxytag="KMenVideo::getVideoBitrate"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+QString KMenVideo::getVideoBitrate (
           </b></td>
           <td valign="bottom"><b>
 )
@@ -141,6 +186,93 @@ No descriptions     </td>
         <tr>
           <td nowrap valign="top"><b> 
 QString KMenVideo::getVideoLavcOpts (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+No descriptions     </td>
+  </tr>
+</table>
+<a name="a14" doxytag="KMenVideo::getVideoPass"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool KMenVideo::getVideoPass (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+No descriptions     </td>
+  </tr>
+</table>
+<a name="a18" doxytag="KMenVideo::getVideoPassCount"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+unsigned short KMenVideo::getVideoPassCount (
+          </b></td>
+          <td valign="bottom"><b>
+)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+No descriptions     </td>
+  </tr>
+</table>
+<a name="a20" doxytag="KMenVideo::getVideoPassRenamed"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+bool KMenVideo::getVideoPassRenamed (
           </b></td>
           <td valign="bottom"><b>
 )
@@ -255,6 +387,35 @@ QString <em>aspect</em>&nbsp;)
 No descriptions     </td>
   </tr>
 </table>
+<a name="a16" doxytag="KMenVideo::setVideoBitrate"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void KMenVideo::setVideoBitrate (
+          </b></td>
+          <td valign="bottom"><b>
+QString <em>bitrate</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+No descriptions     </td>
+  </tr>
+</table>
 <a name="a8" doxytag="KMenVideo::setVideoDivx4Opts"></a><p>
 <table width="100%" cellpadding="2" cellspacing="0" border="0">
   <tr>
@@ -265,13 +426,7 @@ No descriptions     </td>
 void KMenVideo::setVideoDivx4Opts (
           </b></td>
           <td valign="bottom"><b>
-QString <em>quality</em>, 
-          </b></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td><b>
-QString <em>bitrate</em>&nbsp;)
+QString <em>quality</em>&nbsp;)
           </b></td>
         </tr>
 
@@ -364,13 +519,94 @@ QString <em>codec</em>,
         <tr>
           <td></td>
           <td><b>
-bool <em>quality</em>, 
+bool <em>quality</em>&nbsp;)
           </b></td>
         </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+No descriptions     </td>
+  </tr>
+</table>
+<a name="a15" doxytag="KMenVideo::setVideoPass"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td></td>
-          <td><b>
-QString <em>bitrate</em>&nbsp;)
+          <td nowrap valign="top"><b> 
+void KMenVideo::setVideoPass (
+          </b></td>
+          <td valign="bottom"><b>
+bool <em>enabled</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+No descriptions     </td>
+  </tr>
+</table>
+<a name="a19" doxytag="KMenVideo::setVideoPassCount"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void KMenVideo::setVideoPassCount (
+          </b></td>
+          <td valign="bottom"><b>
+unsigned short <em>count</em>&nbsp;)
+          </b></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+No descriptions     </td>
+  </tr>
+</table>
+<a name="a21" doxytag="KMenVideo::setVideoPassRenamed"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td nowrap valign="top"><b> 
+void KMenVideo::setVideoPassRenamed (
+          </b></td>
+          <td valign="bottom"><b>
+bool <em>done</em>&nbsp;)
           </b></td>
         </tr>
 
@@ -420,7 +656,7 @@ No descriptions     </td>
 </table>
 <hr>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="kmenvideo_8h-source.html">kmenvideo.h</a></ul>
-<hr><address><small>Generated at Wed Jul 24 08:20:49 2002 by
+<hr><address><small>Generated at Mon Jul 29 23:59:15 2002 by
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.gif" alt="doxygen" align="middle" border=0 
 width=110 height=53></a>1.2.8.1 written by <a href="mailto:dimitri@stack.nl">Dimitri van Heesch</a>,
