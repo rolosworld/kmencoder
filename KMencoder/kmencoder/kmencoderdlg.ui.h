@@ -25,19 +25,19 @@ void kmencoderdlgForm::readFromStdout()
 
 void kmencoderdlgForm::manageSourceComboBox()
 {
-    if( sourceComboBox->currentText () == "Select Source")
+    if( sourceComboBox->currentText () == tr2i18n( "Select Source" ) )
 	selected = srcSELECT_SOURCE;
-    if( sourceComboBox->currentText () == "File")
+    if( sourceComboBox->currentText () == tr2i18n( "File" ) )
 	selected = srcFILE;
-    if( sourceComboBox->currentText () == "PlayList")
+    if( sourceComboBox->currentText () == tr2i18n( "PlayList" ) )
 	selected = srcPLAYLIST;
-    if( sourceComboBox->currentText () == "URL")
+    if( sourceComboBox->currentText () == tr2i18n( "URL" ) )
 	selected = srcURL;
-    if( sourceComboBox->currentText () == "TV")
+    if( sourceComboBox->currentText () == tr2i18n( "TV" ) )
 	selected = srcTV;
-    if( sourceComboBox->currentText () == "VCD")
+    if( sourceComboBox->currentText () == tr2i18n( "VCD" ) )
 	selected = srcVCD;
-    if( sourceComboBox->currentText () == "DVD")
+    if( sourceComboBox->currentText () == tr2i18n( "DVD" ) )
 	selected = srcDVD;
     
     kmenselected.setSource( selected );
@@ -108,11 +108,14 @@ HelpKPushButton->setPopup(helpMenu->menu());
 
 void kmencoderdlgForm::default_settings()
 {
-    // proc_not_loaded = TRUE;
+    //Set Pass Method defaults.
+    passmethodCheckBox->setEnabled( TRUE );
+    passmethodCheckBox->setChecked( FALSE );
+    passmethodComboBox->setDisabled( TRUE );
     
-    //Set the Default Disabled CheckBoxes.
+     //Set the Default Disabled CheckBoxes.
     setendpositiongroup( FALSE );
-    
+
     //Set the DEFAULT Disabled GroupBoxes.
     setdvdgroup( FALSE );
     setfilegroup( FALSE ); 
@@ -126,7 +129,7 @@ void kmencoderdlgForm::default_settings()
     //Set the Default data values.
     cacheSpinBox->setValue( (miscinfo.getMiscCache()).toInt() ); 
     divx4qualitySpinBox->setValue( 5 );
-    videobitrateSpinBox->setValue( 800 );
+    videobitrateSpinBox->setValue( (videoinfo.getVideoBitrate()).toInt() );
     lameSpinBox->setValue( 128 );
     lamecompresratioSpinBox->setValue( 1 );
     endpositionmegaSpinBox->setValue( 650 );
@@ -183,23 +186,9 @@ void kmencoderdlgForm::dvd_scan()
 {
     new_proc();
     
-    QString home_env = getenv( "HOME" );
-    home_env = home_env + "/.kmencoder";
+    QString dir;
     
-    if( access( home_env, R_OK | W_OK | X_OK | F_OK ) != 0 ){
-	if( mkdir( home_env,  S_IRWXU ) != 0 ) {
-	    QMessageBox::critical( 0, "Error", "Error with config directory!" );
-	    return;
-	}
-    }
-    home_env = home_env + "/tmp";
-    if( access( home_env, R_OK | W_OK | X_OK | F_OK ) != 0 ) {
-	if( mkdir( home_env,  S_IRWXU ) != 0 ) {
-	    QMessageBox::critical( 0, "Error", "Error with tmp directory!" );
-	    return;
-	}
-    }
-    home_env = home_env + "/kmencoder_test.avi";
+    dir = tmp_dir + "/kmencoder_test.avi";
     
     proc->addArgument( "mencoder" );
     proc->addArgument( "-dvd-device" );
@@ -208,7 +197,7 @@ void kmencoderdlgForm::dvd_scan()
     proc->addArgument( "1" ) ;
     proc->addArgument( "-v" );
     proc->addArgument( "-o" );
-    proc->addArgument( home_env );
+    proc->addArgument( dir );
 
     proc->setCommunication ( 0x04 );
 
@@ -219,21 +208,21 @@ void kmencoderdlgForm::dvd_scan()
     if ( !proc->start() ) {
 	// error handling
 	QMessageBox::critical( 0,
-			       "Error",
-			       "Could not scan the DVD!" );
+			      tr2i18n( "Error" ),
+			      tr2i18n( "Could not scan the DVD!" ) );
     } 
 }
 
 
 void kmencoderdlgForm::manageVideoSizeComboBox()
 {
-    if(videosizeComboBox->currentText () == "Auto")
+    if(videosizeComboBox->currentText () == tr2i18n( "Auto" ) )
 	vselected = videoAUTO;
-    if(videosizeComboBox->currentText () == "Aspect")
+    if(videosizeComboBox->currentText () == tr2i18n( "Aspect" ) )
 	vselected = videoASPECT;
-    if(videosizeComboBox->currentText () == "Width/Auto Height")
+    if(videosizeComboBox->currentText () == tr2i18n( "Width/Auto Height" ) )
 	vselected = videoWIDTH;
-    if(videosizeComboBox->currentText () == "Width/Height")
+    if(videosizeComboBox->currentText () == tr2i18n( "Width/Height" ) )
 	vselected = videoWIDTHHEIGHT;
     
     kmenselected.setVideo( vselected );
@@ -283,11 +272,11 @@ void kmencoderdlgForm::videosizeDefaults()
 
 void kmencoderdlgForm::videoQualityOutput()
 {
-    if(vqualityComboBox->currentText () == "Exact Copy")
+    if(vqualityComboBox->currentText () == tr2i18n( "Exact Copy" ) )
 	vqselected = vqEXACTCOPY;
-    if(vqualityComboBox->currentText () == "DivX 4")
+    if(vqualityComboBox->currentText () == tr2i18n( "DivX 4" ) )
 	vqselected = vqDIVX4;
-    if(vqualityComboBox->currentText () == "lavc")
+    if(vqualityComboBox->currentText () == tr2i18n( "lavc" ) )
 	vqselected = vqLAVC;
     
     kmenselected.setVideoQuality( vqselected );
@@ -309,7 +298,7 @@ void kmencoderdlgForm::videoQualityOutput()
 	    
 	    videosizeComboBox->setEnabled( TRUE ); 
 	    lavcGroupBox->setEnabled( FALSE ); 
-	    divx4GroupBox->setEnabled( TRUE ); 
+	    divx4GroupBox->setEnabled( TRUE );
 	    videobitrateSpinBox->setEnabled( TRUE );  
 	    break;
 	}
@@ -329,9 +318,9 @@ void kmencoderdlgForm::videoQualityOutput()
 
 void kmencoderdlgForm::manageAudioQualityCombobox()
 {
-    if(audioqualityComboBox->currentText () == "Exact Copy")
+    if(audioqualityComboBox->currentText () == tr2i18n( "Exact Copy" ) )
 	aqselected = aqEXACTCOPY;
-    if(audioqualityComboBox->currentText () == "MP3")
+    if(audioqualityComboBox->currentText () == tr2i18n( "MP3" ) )
 	aqselected = aqMP3;
     
     kmenselected.setAudioQuality( aqselected );
@@ -360,9 +349,9 @@ void kmencoderdlgForm::manageAudioQualityCombobox()
 void kmencoderdlgForm::manageEndPositionComboBox()
 {
    // manageMiscChanged();
-    if(endpositionComboBox->currentText () == "Mega Bytes")
+    if(endpositionComboBox->currentText () == tr2i18n( "Mega Bytes" ) )
 	epselected = epMEGABYTES;
-    if(endpositionComboBox->currentText () == "Time")
+    if(endpositionComboBox->currentText () == tr2i18n( "Time" ) )
 	epselected = epTIME;
     
     kmenselected.setEndPos( epselected );
@@ -373,13 +362,17 @@ void kmencoderdlgForm::manageEndPositionComboBox()
 	    endpositionhourSpinBox->setEnabled( FALSE ); 
 	    endpositionminutesSpinBox->setEnabled( FALSE ); 
 	    endpositionsecondsSpinBox->setEnabled( FALSE ); 
+	    miscinfo.setMiscEndPosMega( endpositionmegaSpinBox->text() );
 	    break;
 	}
 	case epTIME: {
 	    endpositionmegaSpinBox->setEnabled( FALSE ); 
 	    endpositionhourSpinBox->setEnabled( TRUE ); 
 	    endpositionminutesSpinBox->setEnabled( TRUE ); 
-	    endpositionsecondsSpinBox->setEnabled( TRUE ); 	    
+	    endpositionsecondsSpinBox->setEnabled( TRUE ); 
+	    miscinfo.setMiscEndPosTime( endpositionhourSpinBox->text(),
+                                  endpositionminutesSpinBox->text(),
+                                  endpositionsecondsSpinBox->text() );
 	    break;
 	}
 	default: break;
@@ -388,28 +381,31 @@ void kmencoderdlgForm::manageEndPositionComboBox()
 
 
 void kmencoderdlgForm::setdvdgroup( bool set_it )
-{
+{  
     dvdGroupBox->setEnabled( set_it ); 	
     dvdvideoGroupBox->setEnabled( set_it ); 
     dvdaudioGroupBox->setEnabled( set_it ); 
+    
     dvdtittleSpinBox->setEnabled( set_it ); 
     dvdangleSpinBox->setEnabled( set_it ); 
     dvd1stchapterSpinBox->setEnabled( set_it );
     dvdlastchapterSpinBox->setEnabled( set_it );
-    enablesubCheckBox->setEnabled( set_it );
-    enablesubCheckBox->setChecked( FALSE );
-    subtitleComboBox->setDisabled( set_it ); 
-    subtitlepositionSlider->setEnabled( set_it ); 
-    achannelComboBox->setEnabled( set_it );
-    audiolanguageLineEdit->setEnabled( set_it );
-    audioformatLineEdit->setEnabled( set_it );
-    dvddeviceKURLRequester->setEnabled( TRUE );
-	    
     dvdtittleSpinBox->setValue( (dvdinfo.getDVDTitle_selected() ).toInt() );
     dvdangleSpinBox->setValue( (dvdinfo.getDVDAngle_selected() ).toInt() ); 
     dvd1stchapterSpinBox->setValue( (dvdinfo.getDVD1stChapter() ).toInt() ); 
     dvdlastchapterSpinBox->setValue( (dvdinfo.getDVDLastChapter() ).toInt() );
     
+    enablesubCheckBox->setEnabled( set_it );
+    enablesubCheckBox->setChecked( FALSE );
+      
+    subtitleComboBox->setDisabled( set_it ); 
+    subtitlepositionSlider->setEnabled( set_it );   
+    achannelComboBox->setEnabled( set_it );
+    
+    audiolanguageLineEdit->setEnabled( set_it );
+    audioformatLineEdit->setEnabled( set_it );
+    
+    dvddeviceKURLRequester->setEnabled( TRUE );  
     dvddeviceKURLRequester->setURL( dvdinfo.getDVDDevice() );
 }
 
@@ -420,6 +416,7 @@ void kmencoderdlgForm::setendpositiongroup( bool set_it )
    // endpositionComboBox->setEnabled( set_it  );    
    // endpositionGroupBox->setEnabled( set_it  );
     endpositionCheckBox->setChecked( FALSE );
+    manageEndPositionComboBox();    
 }
 
 
@@ -488,7 +485,7 @@ void kmencoderdlgForm::getDVDInfo()
     QString catched3 = proc->readStderr();
     QString output_text = catched3.simplifyWhiteSpace();
 
-    //Start Searching for mencoder output for info.
+    //Start Searching in the mencoder output for info.
     while( output_text.length() > i ) {
 	catched2 = catched.word( output_text , i);
 	
@@ -525,12 +522,12 @@ void kmencoderdlgForm::getDVDInfo()
     dvdlastchapterSpinBox->setMaxValue( dvdinfo.getChapters() ); 
     
     for( j = 0; j < audio; j++)
-	achannelComboBox->insertItem( dvdAinfo[j].getChannel() , dvdAinfo[j].getIndex() );
+	achannelComboBox->insertItem( dvdAinfo[j].getChannel() /* , dvdAinfo[j].getIndex() */ );
     if(audio != 0)
 	manageSelectAudioChannel();
     
     for(j = 0; j < subt; j++)
-	subtitleComboBox->insertItem( dvdSinfo[j].getID(), dvdSinfo[j].getIndex() ); 
+	subtitleComboBox->insertItem( dvdSinfo[j].getID() /*, dvdSinfo[j].getIndex() */); 
     if(subt != 0)
 	manageSubTitlesComboBox();
 }
@@ -542,8 +539,8 @@ void kmencoderdlgForm::manageSelectAudioChannel()
     uint i = 0;
     
     while( !select ){
-	if( achannelComboBox->currentText () == dvdAinfo[i].getChannel() ) {
-	    dvdinfo.setDVDAudioChannel( achannelComboBox->currentText () );
+	if( (achannelComboBox->currentText () ).compare( dvdAinfo[i].getChannel() ) == 0 ) {
+	    dvdinfo.setDVDAudioChannel( dvdAinfo[i].getChannel() );
 	    audiolanguageLineEdit->setText( dvdAinfo[i].getLanguage() );
 	    audioformatLineEdit->setText( dvdAinfo[i].getFormat() );    
 	    select = TRUE;  
@@ -555,18 +552,20 @@ void kmencoderdlgForm::manageSelectAudioChannel()
 
 void kmencoderdlgForm::stop()
 {
-    if( proc_not_loaded == FALSE ) {
+    if( KMenConfig::proc_loaded == 1 ) {
 	if( proc->isRunning() == TRUE ){
 	    proc->tryTerminate();
 	    QTimer::singleShot( 5000, proc, SLOT( kill() ) );
 	    delete proc;
-	    proc_not_loaded = TRUE;
+	    KMenConfig::proc_loaded = 0;
 	}
 	else {
 	    delete proc;
-	    proc_not_loaded = TRUE;
+	    KMenConfig::proc_loaded = 0;
 	}
     }
+    KMenConfig::proc_loaded = 0;
+    KMenConfig::stopped = 1;
 }
 
 
@@ -576,8 +575,8 @@ void kmencoderdlgForm::manageSubTitlesComboBox()
     uint i = 0;
 
     while( !select ){
-	if( subtitleComboBox->currentText () == dvdSinfo[i].getID() ) {
-	    dvdinfo.setDVDSubTitle( subtitleComboBox->currentText () );	    
+	if( (subtitleComboBox->currentText () ).compare( dvdSinfo[i].getID() ) == 0 ) {
+	    dvdinfo.setDVDSubTitle( dvdSinfo[i].getID() );	    
 	    subposLineEdit->setText( dvdSinfo[i].getLanguage() );
 	    select = TRUE;  
 	}
@@ -605,16 +604,13 @@ void kmencoderdlgForm::manageTitleChanged()
 
 void kmencoderdlgForm::manageLavcCodecChanged()
 {
-    videoinfo.setVideoLavcOpts( lavccodecComboBox->currentText (),
-				lavchighqualityCheckBox->isChecked(),
-				videobitrateSpinBox->text() );
+    manageVBitrateChanged();
 }
 
 
 void kmencoderdlgForm::manageDivx4CodecChanged()
 {
-    videoinfo.setVideoDivx4Opts( divx4qualitySpinBox->text(),
-				 videobitrateSpinBox->text() );
+    manageVBitrateChanged();    
 }
 
 
@@ -635,9 +631,9 @@ void kmencoderdlgForm::manageSoundOnCheckBox()
 
 
 void kmencoderdlgForm::manageMiscChanged()
-{
+{ 
     miscinfo.setMiscNoSkip( noskipCheckBox->isChecked() );
-    miscinfo.setMiscVerbose(verboseCheckBox->isChecked()  );
+    miscinfo.setMiscVerbose( verboseCheckBox->isChecked()  );
     miscinfo.setEndPos_enabled( endpositionCheckBox->isChecked() );
     
     miscinfo.setMiscCache( cacheSpinBox->text() );
@@ -659,16 +655,17 @@ void kmencoderdlgForm::preview()
 void kmencoderdlgForm::begin()
 {
     new_proc();
+    KMenConfig::stopped = 0;
     proc->addArgument( turn.getExec() );
     try {
 	switch( kmenselected.getSource() ) {
 	    case srcSELECT_SOURCE: {
-		throw KMenNotSet( "SOURCE" );
+		throw KMenNotSet( tr2i18n( "SOURCE" ) );
 		break;
 	    }
 	    case srcFILE: {
 		if( fileinfo.setFileArguments( proc ) != TRUE )
-		    throw KMenNotSet( "INput File" );
+		    throw KMenNotSet( tr2i18n( "INput File" ) );
 		break;
 	    }
 	    case srcPLAYLIST: {
@@ -676,7 +673,7 @@ void kmencoderdlgForm::begin()
 	    }
 	    case srcURL: {
 		if ( urlinfo.setURLArguments( proc ) != TRUE )
-		    throw KMenNotSet( "URL Address" ) ;
+		    throw KMenNotSet( tr2i18n( "URL Address" ) ) ;
 		break;
 	    }
 	    case srcTV: {
@@ -699,34 +696,37 @@ void kmencoderdlgForm::begin()
 	miscinfo.setMiscArguments( proc );
 	
 	videoinfo.setVideoArguments( proc, kmenselected );  
+	manageLavcCodecChanged();
 	
 	soundinfo.setSoundArguments( proc, kmenselected );
 	
+	proc->setCommunication( 0x02 | 0x04 /*| 0x08*/ );
+	
 	if( start_encode == TRUE ) {
 	    if( turn.setOutputFileArguments( proc ) != TRUE )
-		throw KMenNotSet( "OUTput File" );
-	    proc->setCommunication( 0x02 /* | 0x04 */ | 0x08  );
-	    
-	    //Get Stdout info.
-	    connect( proc, SIGNAL(readyReadStdout()),
-		     this, SLOT( manageProgressBar( )) );
-	    
+		throw KMenNotSet( tr2i18n( "OUTput File" ) );
+	       
+//------->	    //set progress bar, output stdout stuff.
+	    connect( proc, SIGNAL(readyReadStderr()),
+		     this, SLOT( encode_output() ) );	    
+	    //run this when completed.
 	    connect( proc, SIGNAL( processExited() ),
-		     this, SLOT( manageListBoxDone() ) ); 
+		     this, SLOT( encode_exit() ) ); 
+ 	}
+	else {
+	    //enable disabled stuff when preview.
+	    connect( proc, SIGNAL( processExited() ),
+		     this, SLOT( manageEnableControls() ) );  
+	    //output stdout stuff.
+	    connect( proc, SIGNAL(readyReadStdout()),
+		     this, SLOT( readFromStdout() ) );
 	}
-	else {    
-	    if( miscinfo.getMiscVerbose() == TRUE ) {
-		proc->setCommunication( 0x02 /* | 0x04 */ | 0x08  );
-		
-		connect( proc, SIGNAL(readyReadStdout()),
-			 this, SLOT( readFromStdout() ) );
-		
-		connect( proc, SIGNAL( processExited() ),
-			 this, SLOT( manageEnableControls() ) ); 
-	    }
-	    else connect( proc, SIGNAL( processExited() ),
-			  this, SLOT( manageEnableControls() ) ); 
-	}
+
+	if( miscinfo.getMiscVerbose() == TRUE ) {
+	    //show the stdout stuff.
+	    connect( proc, SIGNAL(readyReadStderr()),
+		     this, SLOT( readFromStderr() ) );
+	}	
     }
     
     catch ( KMenError& theError )
@@ -735,47 +735,58 @@ void kmencoderdlgForm::begin()
 	theError.PrintError();
 	return;
     }
+    
     catch ( ... )
     {
 	stop();
-	QMessageBox::critical( 0, "Error", "Not Identified Error!" );
+	QMessageBox::critical( 0, tr2i18n( "Error" ), tr2i18n( "Not Identified Error!" ) );
 	return;
     }
     
-    //doneListBox->insertStringList( proc->arguments() );
+//------>    //Get Pass Recomended video bitrate.
+    if( videoinfo.getVideoPassCount() == 1 && videoinfo.getVideoPass() == TRUE  && 
+	start_encode == TRUE ) {
+	connect( proc, SIGNAL( readyReadStdout() ),
+		 this, SLOT( getBitratePassInfo() ) ); 
+	turn.deleteTmpFiles();
+    }
     
+    //Repeat encode in pass 1 and pass 2 after the audio encode. If not stopped!
+    if( videoinfo.getVideoPassCount() != 0  && videoinfo.getVideoPass() == TRUE &&
+	start_encode == TRUE ) 
+	connect( proc, SIGNAL( processExited() ),
+		 this, SLOT( permission2begin() ) ); 
+
+    connect( proc, SIGNAL( processExited() ),
+	     this, SLOT( renameFile() ) ); 
+    
+    //Set Misc Settings.  In case something was changed to comply.
+    connect( proc, SIGNAL( processExited() ),
+	     this, SLOT( manageMiscChanged() ) );
+    
+    //Set the pass settings, in case mplayer is used or the new bitrate was set!
+    connect( proc, SIGNAL( processExited() ),
+	     this, SLOT( forward_pass() ) );
+    
+    //check the args created! just for debug!
+    doneListBox->insertStringList( proc->arguments() );
+
     //START process
-    if ( !proc->start() ) {
-	// error handling
-	if( start_encode == TRUE )
-	QMessageBox::critical( 0,
-			       "Error",
-			       "Can't Begin mencoder!" );
-	else QMessageBox::critical( 0,
-			       "Error",
-			       "Can't Begin mplayer!" );
-    }  
-    else {
-	optionsTabWidget->setEnabled( FALSE );
-	startPushButton->setEnabled( FALSE );
-	previewPushButton->setEnabled( FALSE );
-    }  
+    start_proc();
 }
 
 
 void kmencoderdlgForm::prebegin()
 {
-	    turn.setPreview( start_encode );
+    turn.setPreview( start_encode );
 
-	    videoinfo.setVideoEncode_enabled( start_encode );
-	    soundinfo.setSoundEncode_enabled( start_encode );
+    videoinfo.setVideoEncode_enabled( start_encode );
+    soundinfo.setSoundEncode_enabled( start_encode );
 	    
-	    miscinfo.setEndPos_enabled( endpos );
-	    videoinfo.setVideoEncode_enabled( start_encode );
+    miscinfo.setEndPos_enabled( endpos );
+    videoinfo.setVideoEncode_enabled( start_encode );
 	    
-	    begin();
-	    
-	    manageMiscChanged();
+    begin();
 }
 
 
@@ -791,13 +802,12 @@ void kmencoderdlgForm::manageListBoxDone()
     encodingProgressBar->reset();
     //encodingProgressBar->setProgress( 0 );
     progress_on = FALSE;
-    manageEnableControls();
 }
 
 
 void kmencoderdlgForm::manageProgressBar()
 {
-    QString catched = proc->readStdout(); 
+    QString catched = proc->readStderr(); 
     QString output_text = catched.simplifyWhiteSpace();
    ushort indx = output_text.find( '%', 0, TRUE);
     catched = output_text.mid( indx - 2, 2 );
@@ -834,8 +844,10 @@ void kmencoderdlgForm::new_proc()
 {
     stop();
     proc = new QProcess( this );
-    proc_not_loaded = FALSE;
-    proc->setCommunication( 0x02 | 0x04 | 0x08 );
+    KMenConfig::proc_loaded = 1;
+    proc->setCommunication( 0x02 | 0x04 /*| 0x08 */);
+    move2dir();
+    proc->setWorkingDirectory( tmp_dir );
 }
 
 
@@ -887,23 +899,7 @@ void kmencoderdlgForm::vcd_scan()
 {
    new_proc();
     
-    QString home_env = getenv( "HOME" );
-    home_env = home_env + "/.kmencoder";
-    
-    if( access( home_env, R_OK | W_OK | X_OK | F_OK ) != 0 ){
-	if( mkdir( home_env,  S_IRWXU ) != 0 ) {
-	    QMessageBox::critical( 0, "Error", "Error with config directory!" );
-	    return;
-	}
-    }
-    home_env = home_env + "/tmp";
-    if( access( home_env, R_OK | W_OK | X_OK | F_OK ) != 0 ) {
-	if( mkdir( home_env,  S_IRWXU ) != 0 ) {
-	    QMessageBox::critical( 0, "Error", "Error with tmp directory!" );
-	    return;
-	}
-    }
-    home_env = home_env + "/kmencoder_test.avi";
+    QString dir = tmp_dir + "/kmencoder_test.avi";
     
     proc->addArgument( "mencoder" );
     proc->addArgument( "-cdrom-device" );
@@ -912,7 +908,7 @@ void kmencoderdlgForm::vcd_scan()
     proc->addArgument( "1" ) ;
     proc->addArgument( "-v" );
     proc->addArgument( "-o" );
-    proc->addArgument( home_env );
+    proc->addArgument( dir );
 
     proc->setCommunication ( 0x04 );
 
@@ -923,8 +919,8 @@ void kmencoderdlgForm::vcd_scan()
     if ( !proc->start() ) {
 	// error handling
 	QMessageBox::critical( 0,
-			       "Error",
-			       "Could not scan the VCD!" );
+			      tr2i18n( "Error" ),
+			      tr2i18n( "Could not scan the VCD!" ) );
     } 
 }
 
@@ -956,4 +952,141 @@ void kmencoderdlgForm::manageTrackChanged()
 void kmencoderdlgForm::manageCdromChanged()
 {
     vcdinfo.setVCDDevice( cdromdeviceKURLRequester->url() );
+}
+
+
+void kmencoderdlgForm::setpassgroup( bool set_it )
+{
+    passmethodComboBox->setEnabled( set_it );
+    if( set_it == TRUE ) {
+	vqualityComboBox->setCurrentText( tr2i18n( "lavc" ) );
+	lavccodecComboBox->setCurrentText( tr2i18n( "DivX 4/5" ) );
+	
+	//manageLavcCodecChanged();
+	endpositionCheckBox->setChecked( FALSE );
+	miscinfo.setEndPos_enabled( FALSE );
+    }
+    vqualityComboBox->setDisabled( set_it );    
+    lavccodecComboBox->setDisabled( set_it );
+    videobitrateSpinBox->setDisabled( set_it );
+    videoinfo.setVideoPass( set_it );
+    soundinfo.setSoundPass( set_it );
+    turn.setConfPass( set_it );
+}
+
+
+void kmencoderdlgForm::start_proc()
+{
+    //START process
+    if ( !proc->start() ) {
+	// error handling
+	if( start_encode == TRUE )
+	QMessageBox::critical( 0,
+			      tr2i18n( "Error" ),
+			      tr2i18n( "Can't Begin mencoder!" ) );
+	else QMessageBox::critical( 0,
+			       tr2i18n( "Error" ),
+			       tr2i18n( "Can't Begin mplayer!" ) );
+    }  
+    else {
+	optionsTabWidget->setEnabled( FALSE );
+	startPushButton->setEnabled( FALSE );
+	previewPushButton->setEnabled( FALSE );
+    }  
+}
+
+
+void kmencoderdlgForm::getBitratePassInfo()
+{
+    //GET Important Info for the Pass Method.
+    QString size = passmethodComboBox->currentText();
+    QString catched2 = proc->readStdout();
+    QString output_text = catched2.simplifyWhiteSpace();
+    
+    int tmp = output_text.find( size, 0 ) +10;
+    int tmp2 = output_text.find( " ", tmp );
+    catched2 = output_text.mid( tmp, tmp2 - tmp );
+    if( catched2 != NULL ) {
+	videobitrateSpinBox->setValue( catched2.toInt() );
+	videoinfo.setVideoBitrate( catched2 );
+	//cout << catched2 << endl;
+	//cout << tmp << " " << tmp2 << endl;
+    }  
+    //cout <<  output_text << endl;
+}
+
+
+void kmencoderdlgForm::move2dir()
+{
+    home_env = getenv( "HOME" );
+    home_env = home_env + "/.kmencoder";
+    
+    if( access( home_env, R_OK | W_OK | X_OK | F_OK ) != 0 ){
+	if( mkdir( home_env,  S_IRWXU ) != 0 ) {
+	    QMessageBox::critical( 0,  tr2i18n( "Error" ), tr2i18n( "Error with config directory!" ) );
+	    return;
+	}
+    }
+    tmp_dir = home_env + "/tmp";
+    if( access( tmp_dir, R_OK | W_OK | X_OK | F_OK ) != 0 ) {
+	if( mkdir( tmp_dir,  S_IRWXU ) != 0 ) {
+	    QMessageBox::critical( 0, tr2i18n( "Error" ), tr2i18n( "Error with tmp directory!" ) );
+	    return;
+	}
+    }
+    turn.setConfDir( tmp_dir );
+}
+
+
+void kmencoderdlgForm::forward_pass()
+{
+    setpassgroup( passmethodCheckBox->isChecked() );
+}
+
+
+void kmencoderdlgForm::encode_exit()
+{
+    //tell what was finished.
+    manageListBoxDone(); 
+    //enable the disabled stuff
+    manageEnableControls();
+}
+
+
+void kmencoderdlgForm::encode_output()
+{
+    //set progressbar
+    manageProgressBar();
+    
+    //output stdout stuff.
+    readFromStderr();
+}
+
+
+void kmencoderdlgForm::manageVBitrateChanged()
+{
+    videoinfo.setVideoBitrate( videobitrateSpinBox->text() );
+    
+    if(vqualityComboBox->currentText () == tr2i18n( "DivX 4" ) )
+	videoinfo.setVideoDivx4Opts( divx4qualitySpinBox->text() );
+    if(vqualityComboBox->currentText () == tr2i18n( "lavc" ) )
+	videoinfo.setVideoLavcOpts( lavccodecComboBox->currentText (),
+				lavchighqualityCheckBox->isChecked() );
+}
+
+
+void kmencoderdlgForm::permission2begin()
+{
+    if( KMenConfig::stopped == 1 ) {
+	videoinfo.setVideoPassCount( 0 );
+	soundinfo.setSoundPassCount( 0 );
+	KMenConfig::stopped = 0;
+    }
+    else begin();
+}
+
+
+void kmencoderdlgForm::renameFile()
+{
+    turn.setConfOutRename();
 }

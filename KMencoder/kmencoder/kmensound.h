@@ -53,6 +53,11 @@ public:
   /** No descriptions */
   void setSoundEncode_enabled( bool snd_enc );
 
+  /**  */
+  void setSoundPass( bool enabled );
+  /** No descriptions */
+  void setSoundPassCount( unsigned short count );
+
 protected: // Protected attributes
 
   /**  */
@@ -62,6 +67,9 @@ protected: // Protected attributes
   QString *sound_lame_opts;
   /**  */
   bool sound_encode;
+  /**  */
+  unsigned short sound_pass_count;
+  /**  */
+  bool sound_pass;
 };
-
 #endif

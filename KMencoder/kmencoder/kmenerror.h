@@ -20,6 +20,8 @@
 
 #include <qstring.h>
 #include <qmessagebox.h>
+#include <klocale.h>
+
 /**
   *@author Rolando
   */

@@ -49,12 +49,10 @@ public:
 
   /** No descriptions */
   void setVideoLavcOpts( QString codec,
-                         bool quality,
-                         QString bitrate );
+                         bool quality );
 
   /** No descriptions */
-  void setVideoDivx4Opts( QString quality,
-                          QString bitrate );
+  void setVideoDivx4Opts( QString quality );
 
   /** No descriptions */
   QString getVideoLavcOpts();
@@ -68,6 +66,22 @@ public:
   void setVideoArguments( QProcess *procs, KMenComboBox sel );
   /** No descriptions */
   void setVideoEncode_enabled( bool enabled );
+  /** No descriptions */
+  bool getVideoPass();
+  /** No descriptions */
+  void setVideoPass( bool enabled );
+  /** No descriptions */
+  void setVideoBitrate( QString bitrate );
+  /** No descriptions */
+  QString getVideoBitrate();
+  /** No descriptions */
+  unsigned short getVideoPassCount();
+  /** No descriptions */
+  void setVideoPassCount( unsigned short count );
+  /** No descriptions */
+  bool getVideoPassRenamed();
+  /** No descriptions */
+  void setVideoPassRenamed( bool done );
 
 protected: // Protected attributes
 
@@ -84,9 +98,17 @@ protected: // Protected attributes
   QString *video_width;
 
   /**  */
+  bool video_pass;
+  /**  */
   bool video_encode;
   /**  */
   QString *video_height;
+  /**  */
+  unsigned short video_pass_count;
+  /**  */
+  QString *video_bitrate;
+  /**  */
+  bool video_pass_renamed;
 };
 
 #endif

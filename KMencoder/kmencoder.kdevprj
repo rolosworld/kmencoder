@@ -21,17 +21,17 @@ addcxxflags=
 bin_program=kmencoder
 cflags=
 cppflags=
-cxxflags=\s-O0 -Wall
+cxxflags=\s-O3 -Wall
 ldadd=\s$(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
-ldflags=\s        \s
+ldflags=\s-s             \s
 
 [General]
 AMChanged=true
 author=Rolando Gonzalez
-configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux\s
+configure_args=\s--build=i386-linux --host=i386-linux --target=i386-linux --disable-debug --enable-final\s
 email=rolando8@prtc.net
 kdevprj_version=1.3
-lfv_open_groups=GNU,User Interface
+lfv_open_groups=User Interface
 make_options=\s-e -w -s -j1
 makefiles=Makefile.am,kmencoder/Makefile.am,doc/Makefile.am,doc/en/Makefile.am,po/Makefile.am
 modifyMakefiles=true

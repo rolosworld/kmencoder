@@ -21,8 +21,12 @@ KMenVideo::KMenVideo(){
   video_aspect = new QString( "16:9" );
   video_height = new QString( "480" );
   video_width = new QString( "640" );
+  video_bitrate = new QString( "16000" );
   video_divx4_opts = new QString( "br=16000:q=5" );
   video_lavc_opts = new QString( "vcodec=mpeg4:vhq:vbitrate=16000" );
+  video_pass_count = 0;
+  video_pass = FALSE;
+  video_pass_renamed = TRUE;
 }
 
 KMenVideo::~KMenVideo(){
@@ -31,6 +35,7 @@ KMenVideo::~KMenVideo(){
   delete video_height;
   delete video_width;
   delete video_lavc_opts;
+  delete video_bitrate;
 }
 
 /** No descriptions */
@@ -49,13 +54,12 @@ void KMenVideo::setVideoHeight( QString height ){
 }
 
 /** No descriptions */
-void KMenVideo::setVideoDivx4Opts( QString quality,
-                                   QString bitrate ){
+void KMenVideo::setVideoDivx4Opts( QString quality ){
   QString bit = "br=";
   QString q = ":q=";
   QString tmp = bit;
 
-  tmp = tmp + bitrate;
+  tmp = tmp + *video_bitrate;
   tmp = tmp + q;
   tmp = tmp + quality;
 
@@ -64,8 +68,7 @@ void KMenVideo::setVideoDivx4Opts( QString quality,
 
 /** No descriptions */
 void KMenVideo::setVideoLavcOpts( QString codec,
-                                  bool quality,
-                                  QString bitrate ){
+                                  bool quality ){
   QString vcodec = "vcodec=";
   QString vbitrate = ":vbitrate=";
   QString vhq = ":vhq";
@@ -82,7 +85,7 @@ void KMenVideo::setVideoLavcOpts( QString codec,
 
   tmp = tmp + tmp2;
   tmp = tmp + vbitrate;
-  tmp = tmp + bitrate;
+  tmp = tmp + *video_bitrate;
 
   if( quality == TRUE)
     tmp = tmp + vhq;
@@ -117,6 +120,7 @@ QString KMenVideo::getVideoLavcOpts(){
 }
 /** No descriptions */
 void KMenVideo::setVideoArguments( QProcess *procs, KMenComboBox sel ){
+  QString passarg;
   // Set the video image size options.
   if( sel.getVideo() != videoAUTO ) {
    procs->addArgument( "-vop" );
@@ -141,23 +145,85 @@ void KMenVideo::setVideoArguments( QProcess *procs, KMenComboBox sel ){
   if( video_encode == TRUE ) {
     procs->addArgument( "-ovc" );
 
-    if( sel.getVideoQuality() == vqEXACTCOPY )
-      procs->addArgument( "copy" );
+    if( video_pass != TRUE) {
+      if( sel.getVideoQuality() == vqEXACTCOPY )
+       procs->addArgument( "copy" );
 
-    if( sel.getVideoQuality() == vqDIVX4 ) {
-      procs->addArgument( "divx4" );
-      procs->addArgument( "-divx4opts" );
-      procs->addArgument( *video_divx4_opts );
+      if( sel.getVideoQuality() == vqDIVX4 ) {
+       procs->addArgument( "divx4" );
+       procs->addArgument( "-divx4opts" );
+       procs->addArgument( *video_divx4_opts );
+     }
+
+     if( sel.getVideoQuality() == vqLAVC ) {
+       procs->addArgument( "lavc" );
+       procs->addArgument( "-lavcopts" );
+       procs->addArgument( *video_lavc_opts );
+     }
     }
 
-    if( sel.getVideoQuality() == vqLAVC ) {
+    if( video_pass == TRUE && video_pass_count > 0 ) {
+      if( video_pass_count == 2 ) {
+         video_pass_count = 0;
+         passarg = "2";
+         video_pass = FALSE;
+         video_pass_renamed = FALSE ;
+     }
+      else {
+          video_pass_count++;
+          passarg = "1";
+      }
+
       procs->addArgument( "lavc" );
       procs->addArgument( "-lavcopts" );
+      *video_lavc_opts =  *video_lavc_opts + ":vpass=";
+      *video_lavc_opts =  *video_lavc_opts + passarg;
       procs->addArgument( *video_lavc_opts );
-    }
+      }
+   else if( video_pass ==TRUE && video_pass_count == 0 ) {
+     procs->addArgument( "frameno" );
+     video_pass_count++;
+   }
   }
 }
+
 /** No descriptions */
 void KMenVideo::setVideoEncode_enabled( bool enabled ){
   video_encode = enabled;
+}
+
+/** No descriptions */
+void KMenVideo::setVideoPass( bool enabled ){
+  video_pass = enabled;
+}
+
+/** No descriptions */
+bool KMenVideo::getVideoPass(){
+  return video_pass;
+}
+
+/** No descriptions */
+void KMenVideo::setVideoBitrate( QString bitrate ){
+  video_bitrate = new QString( bitrate );
+}
+
+/** No descriptions */
+QString KMenVideo::getVideoBitrate(){
+  return *video_bitrate;
+}
+/** No descriptions */
+unsigned short KMenVideo::getVideoPassCount(){
+  return video_pass_count;
+}
+/** No descriptions */
+void KMenVideo::setVideoPassCount( unsigned short count ){
+  video_pass_count = count;
+}
+/** No descriptions */
+void KMenVideo::setVideoPassRenamed( bool done ){
+  video_pass_renamed = done;
+}
+/** No descriptions */
+bool KMenVideo::getVideoPassRenamed(){
+  return video_pass_renamed;
 }

@@ -24,5 +24,5 @@ KMenError::~KMenError(){
 }
 /** No descriptions */
 void KMenError::PrintError(){
-     QMessageBox::critical( 0, "Error", "An Error Ocurred, with: " + err_str );
+     QMessageBox::critical( 0, tr2i18n( "Error" ), tr2i18n( "An Error Ocurred, with: " ) + err_str );
 }

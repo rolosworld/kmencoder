@@ -26,6 +26,6 @@ KMenNotSet::~KMenNotSet(){
 /** No descriptions */
 void KMenNotSet::PrintError(){
   QString tmp =  KMenError::err_str;
-  tmp = tmp  + " Not Set!";
-  QMessageBox::critical( 0, "Error",  tmp  );
+  tmp = tmp  + tr2i18n( " Not Set!" );
+  QMessageBox::critical( 0, tr2i18n( "Error" ),  tmp  );
 }

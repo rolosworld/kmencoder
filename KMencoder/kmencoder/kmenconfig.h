@@ -21,6 +21,9 @@
   */
 #include <qstring.h>
 #include <qprocess.h>
+#include <qdir.h>
+#include <qmessagebox.h>
+#include <klocale.h>
 
 class KMenConfig {
 public: 
@@ -47,7 +50,19 @@ public:
   QString getOutputFileName();
   /** No descriptions */
   bool setOutputFileArguments( QProcess *procs );
-
+  /** No descriptions */
+  /** No descriptions */
+  void deleteTmpFiles();
+  void setConfPass( bool enabled );
+  /** No descriptions */
+  void setConfOutRename();
+  /** No descriptions */
+  void setConfDir( QString dir );
+  /** No descriptions */
+  QString getConfDir();
+    /**  */
+  static unsigned short proc_loaded;
+  static unsigned short stopped;
 
 protected: // Protected attributes
 
@@ -61,6 +76,14 @@ protected: // Protected attributes
   QString *out_file_name;
   /**  */
   bool encode;
+  /**  */
+  bool conf_pass;
+  /**  */
+  QString *true_out_file_name;
+  /**  */
+  QString *tmp;
+  /**  */
+  QDir *d;
 };
 
 #endif

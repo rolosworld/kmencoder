@@ -24,6 +24,8 @@ KMenSound::KMenSound(){
                     "",
                     "100",
                     0 );
+  sound_pass = FALSE;
+  sound_pass_count = 0;
 }
 
 KMenSound::~KMenSound(){
@@ -102,6 +104,7 @@ QString KMenSound::getSoundLameOpts(){
 bool KMenSound::getSoundON(){
   return sound_on;
 }
+
 /** No descriptions */
 void KMenSound::setSoundArguments( QProcess *procs, KMenComboBox sel ){
   //Set Sound Options
@@ -110,20 +113,30 @@ void KMenSound::setSoundArguments( QProcess *procs, KMenComboBox sel ){
   else {
     if( sound_encode == TRUE ) {
       procs->addArgument( "-oac" );
-
-      if( sel.getAudioQuality() == aqEXACTCOPY )
+     if( sel.getAudioQuality() == aqEXACTCOPY || sound_pass_count > 0 )
         procs->addArgument( "copy" );
-
-      if( sel.getAudioQuality() == aqMP3 ) {
-        procs->addArgument( "mp3lame" );
-        procs->addArgument( "-lameopts" );
-        procs->addArgument( *sound_lame_opts );
+     else {
+       if( sel.getAudioQuality() == aqMP3 ) {
+         procs->addArgument( "mp3lame" );
+         procs->addArgument( "-lameopts" );
+         procs->addArgument( *sound_lame_opts );
+       }
       }
     }
   }
+  if( sound_pass_count == 2 ) { sound_pass_count = 0; sound_pass = FALSE; }
+  if( sound_pass == TRUE )  sound_pass_count++;
 }
 
 /** No descriptions */
 void KMenSound::setSoundEncode_enabled( bool enable ){
   sound_encode = enable;
+}
+
+void KMenSound::setSoundPass( bool enabled ) {
+  sound_pass = enabled;
+}
+/** No descriptions */
+void KMenSound::setSoundPassCount( unsigned short count ){
+  sound_pass_count = count;
 }

@@ -3,21 +3,17 @@
 <KDevPrjSession>
  <LastCompileConfig>(Default)</LastCompileConfig>
  <Mainframe MaximizeMode="1" />
- <DocsAndViews NumberOfDocuments="1" >
-  <Doc0 CursorPosLine="0" Type="KWriteDoc" NumberOfViews="1" CursorPosCol="0" FileName="/home/rolo/Projects/Beta/SRCFRG/TEST/KMencoder/po/es.po" >
-   <View0 Top="0" Width="406" Attach="1" Height="333" Left="0" Focus="1" Type="KWriteView" MinMaxMode="2" />
-  </Doc0>
- </DocsAndViews>
+ <DocsAndViews NumberOfDocuments="0" />
  <CompileConfigs>
   <releade>
    <Architecture>i386</Architecture>
    <Platform>linux</Platform>
    <VPATHSubdir>/home/rolo/Projects/Beta/SRCFRG/TEST/KMencoder/releade</VPATHSubdir>
-   <CFLAGS></CFLAGS>
-   <CPPFLAGS></CPPFLAGS>
+   <CFLAGS/>
+   <CPPFLAGS/>
    <CXXFLAGS> -O3</CXXFLAGS>
-   <AdditCXXFLAGS></AdditCXXFLAGS>
-   <LDFLAGS> -s   </LDFLAGS>
+   <AdditCXXFLAGS/>
+   <LDFLAGS> -s     </LDFLAGS>
    <ConfigureArgs> --build=i386-linux --host=i386-linux --target=i386-linux --disable-debug --enable-final </ConfigureArgs>
   </releade>
   <debug>

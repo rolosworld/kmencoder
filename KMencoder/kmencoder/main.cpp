@@ -18,7 +18,7 @@
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 #include <klocale.h>
-
+#include "kmenconfig.h"
 #include "kmencoder.h"
 
 static const char *description =
@@ -34,7 +34,8 @@ static KCmdLineOptions options[] =
 
 int main(int argc, char *argv[])
 {
-
+  KMenConfig::proc_loaded = 0;
+  KMenConfig::stopped = 0;
   KAboutData aboutData( "kmencoder", I18N_NOOP("KMencoder"),
     VERSION, description, KAboutData::License_GPL,
     "(c) 2002, Rolando Gonzalez", 0, 0, "rolando8@prtc.net");
