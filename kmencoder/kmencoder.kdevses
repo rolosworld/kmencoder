@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE KDevPrjSession>
+<KDevPrjSession>
+ <LastCompileConfig>(Predeterminado)</LastCompileConfig>
+ <Mainframe MaximizeMode="1" />
+ <DocsAndViews NumberOfDocuments="0" />
+ <CompileConfigs>
+  <releade>
+   <Architecture>i386</Architecture>
+   <Platform>linux</Platform>
+   <VPATHSubdir>/home/rolo/Projects/Beta/SRCFRG/TEST/KMencoder/releade</VPATHSubdir>
+   <CFLAGS/>
+   <CPPFLAGS/>
+   <CXXFLAGS> -O3</CXXFLAGS>
+   <AdditCXXFLAGS/>
+   <LDFLAGS> -s     </LDFLAGS>
+   <ConfigureArgs> --build=i386-linux --host=i386-linux --target=i386-linux --disable-debug --enable-final </ConfigureArgs>
+  </releade>
+  <debug>
+   <Architecture>i386</Architecture>
+   <Platform>linux</Platform>
+   <VPATHSubdir>/home/rolo/Projects/Beta/SRCFRG/TEST/KMencoder/debug</VPATHSubdir>
+   <CFLAGS/>
+   <CPPFLAGS/>
+   <CXXFLAGS> -O0 -g3 -Wall</CXXFLAGS>
+   <AdditCXXFLAGS/>
+   <LDFLAGS/>
+   <ConfigureArgs> --build=i386-linux --host=i386-linux --target=i386-linux --enable-debug </ConfigureArgs>
+  </debug>
+ </CompileConfigs>
+</KDevPrjSession>
