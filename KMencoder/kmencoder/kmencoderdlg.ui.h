@@ -108,6 +108,8 @@ HelpKPushButton->setPopup(helpMenu->menu());
 
 void kmencoderdlgForm::default_settings()
 {
+    move2dir();
+    turn.deleteTmpFiles();    
     //Set Pass Method defaults.
     passmethodCheckBox->setEnabled( TRUE );
     passmethodCheckBox->setChecked( FALSE );
@@ -747,9 +749,11 @@ void kmencoderdlgForm::begin()
     if( videoinfo.getVideoPassCount() == 1 && videoinfo.getVideoPass() == TRUE  && 
 	start_encode == TRUE ) {
 	connect( proc, SIGNAL( readyReadStdout() ),
-		 this, SLOT( getBitratePassInfo() ) ); 
+		 this, SLOT( getBitratePassInfo() ) );
 	turn.deleteTmpFiles();
     }
+    
+    
     
     //Repeat encode in pass 1 and pass 2 after the audio encode. If not stopped!
     if( videoinfo.getVideoPassCount() != 0  && videoinfo.getVideoPass() == TRUE &&
@@ -1009,10 +1013,7 @@ void kmencoderdlgForm::getBitratePassInfo()
     if( catched2 != NULL ) {
 	videobitrateSpinBox->setValue( catched2.toInt() );
 	videoinfo.setVideoBitrate( catched2 );
-	//cout << catched2 << endl;
-	//cout << tmp << " " << tmp2 << endl;
     }  
-    //cout <<  output_text << endl;
 }
 
 
@@ -1089,4 +1090,9 @@ void kmencoderdlgForm::permission2begin()
 void kmencoderdlgForm::renameFile()
 {
     turn.setConfOutRename();
+    
+    //delete tmp files.
+    if( videoinfo.getVideoPassCount() == 0  && videoinfo.getVideoPass() == FALSE &&
+	start_encode == TRUE ) 
+	turn.deleteTmpFiles();    
 }
