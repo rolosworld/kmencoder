@@ -1,0 +1,13 @@
+Source: kmencoder
+Section: contrib/graphics
+Priority: optional
+Maintainer: Till Gerken <till@tantalo.net>
+Build-Depends: debhelper (>> 3.0.0), kdelibs4-dev, libqt3-mt-dev
+Standards-Version: 3.5.2
+
+Package: kmencoder
+Architecture: any
+Depends: mplayer, ${shlibs:Depends}
+Description: KDE frontend to Mencoder
+ KMencoder is a frontend to Mencoder to allow recoding of
+ video files with KDE.

@@ -1,0 +1,7 @@
+?package(kmencoder):\
+	needs="X11"\
+	section="Apps/Multimedia"\
+	hints="KDE,MPlayer,MEncoder"\
+	title="KMEncoder"\
+	command="/usr/bin/kmencoder"\
+	icon="/usr/share/icons/locolor/32x32/apps/kmencoder.png"
