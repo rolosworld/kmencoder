@@ -1,0 +1,428 @@
+# KMencoder Translation files.
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Crissi <crissi99@gmx.de>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KMencoder 0.1.3\n"
+"POT-Creation-Date: 2002-07-29 23:58-0400\n"
+"PO-Revision-Date: 2002-07-22 00:42-0400\n"
+"Last-Translator: Rolando Gonzalez <rolando8@prtc.net>\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#: kmencoderdlg.ui.h:28
+msgid "Select Source"
+msgstr "Quelle wählen"
+
+#: kmencoderdlg.ui.h:32
+msgid "PlayList"
+msgstr "Abspielliste"
+
+#: kmencoderdlg.ui.h:34
+msgid "URL"
+msgstr "URL"
+
+#: kmencoderdlg.ui.h:36
+msgid "TV"
+msgstr "TV"
+
+#: kmencoderdlg.ui.h:38
+msgid "VCD"
+msgstr "VCD"
+
+#: kmencoderdlg.ui.h:40
+msgid "DVD"
+msgstr "DVD"
+
+#: kmencoderdlg.ui.h:212
+msgid "Could not scan the DVD!"
+msgstr ""
+
+#: kmencoderdlg.ui.h:219
+msgid "Auto"
+msgstr "Auto"
+
+#: kmencoderdlg.ui.h:221
+msgid "Aspect"
+msgstr "Verhältnis"
+
+#: kmencoderdlg.ui.h:223
+msgid "Width/Auto Height"
+msgstr "Breite/Automatische Höhe"
+
+#: kmencoderdlg.ui.h:225
+msgid "Width/Height"
+msgstr "Breite/Höhe"
+
+#: kmencoderdlg.ui.h:275 kmencoderdlg.ui.h:321
+msgid "Exact Copy"
+msgstr "Exakte Kopie"
+
+#: kmencoderdlg.ui.h:277 kmencoderdlg.ui.h:1070
+msgid "DivX 4"
+msgstr "DivX4"
+
+#: kmencoderdlg.ui.h:279 kmencoderdlg.ui.h:962 kmencoderdlg.ui.h:1072
+msgid "lavc"
+msgstr "Lavc"
+
+#: kmencoderdlg.ui.h:323
+msgid "MP3"
+msgstr "MP3"
+
+#: kmencoderdlg.ui.h:352
+msgid "Mega Bytes"
+msgstr "Megabyte"
+
+#: kmencoderdlg.ui.h:354
+msgid "Time"
+msgstr "Zeit"
+
+#: kmencoderdlg.ui.h:663
+msgid "SOURCE"
+msgstr ""
+
+#: kmencoderdlg.ui.h:668
+msgid "INput File"
+msgstr ""
+
+#: kmencoderdlg.ui.h:676
+msgid "URL Address"
+msgstr ""
+
+#: kmencoderdlg.ui.h:707
+msgid "OUTput File"
+msgstr ""
+
+#: kmencoderdlg.ui.h:742
+msgid "Not Identified Error!"
+msgstr ""
+
+#: kmencoderdlg.ui.h:923
+msgid "Could not scan the VCD!"
+msgstr ""
+
+#: kmencoderdlg.ui.h:963
+msgid "DivX 4/5"
+msgstr "DivX4/5"
+
+#: kmencoderdlg.ui.h:986
+msgid "Can't Begin mencoder!"
+msgstr ""
+
+#: kmencoderdlg.ui.h:989
+msgid "Can't Begin mplayer!"
+msgstr ""
+
+#: kmencoderdlg.ui.h:1026
+msgid "Error with config directory!"
+msgstr ""
+
+#: kmencoderdlg.ui.h:1033
+msgid "Error with tmp directory!"
+msgstr ""
+
+#: _translatorinfo.cpp:1
+msgid ""
+"_: NAME OF TRANSLATORS\n"
+"Your names"
+msgstr "Crissi"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr "crissi99@gmx.de"
+
+#: main.cpp:25 main.cpp:39
+msgid "KMencoder"
+msgstr "KMencoder"
+
+#: kmenconfig.cpp:118
+msgid "An Error Ocurred, removing: "
+msgstr ""
+
+#: kmenconfig.cpp:126
+msgid "An Error Ocurred, renaming: "
+msgstr ""
+
+#: kmenerror.cpp:27
+msgid "An Error Ocurred, with: "
+msgstr ""
+
+#: kmennotset.cpp:29
+msgid " Not Set!"
+msgstr ""
+
+#~ msgid "Kmencoder"
+#~ msgstr "Kmencoder"
+
+#~ msgid "Main"
+#~ msgstr "Haupt"
+
+#~ msgid "Source"
+#~ msgstr "Quelle"
+
+#~ msgid "Output"
+#~ msgstr "Ausgabe"
+
+#~ msgid "IOPUT"
+#~ msgstr "Eingabe/Ausgabe"
+
+#~ msgid "File Options"
+#~ msgstr "Dateioptionen"
+
+#~ msgid "PlayList Options"
+#~ msgstr "Abspiellisten-Optionen"
+
+#~ msgid "URL Options"
+#~ msgstr "URL-Optionen"
+
+#~ msgid "VCD Options"
+#~ msgstr "VCD-Optionen"
+
+#~ msgid "Track: "
+#~ msgstr "Track: "
+
+#~ msgid "TV Options"
+#~ msgstr "TV-Optionen"
+
+#~ msgid "DVD Options"
+#~ msgstr "DVD-Optionen"
+
+#~ msgid "Video Options"
+#~ msgstr "Video-Optionen"
+
+#~ msgid "Title: "
+#~ msgstr "Titel: "
+
+#~ msgid "Angle: "
+#~ msgstr "Winkel: "
+
+#~ msgid "Chapters: "
+#~ msgstr "Kapitel: "
+
+#~ msgid "to"
+#~ msgstr "bis"
+
+#~ msgid "Subtitle Language: "
+#~ msgstr "Untertitel-Sprache: "
+
+#~ msgid "Subtitle Position: "
+#~ msgstr "Untertitel-Position: "
+
+#~ msgid "E&nable SubTitles"
+#~ msgstr "Untertitel &aktivieren"
+
+#~ msgid "%"
+#~ msgstr "%"
+
+#~ msgid "Audio Options"
+#~ msgstr "Audiooptionen"
+
+#~ msgid "Select Audio Channel: "
+#~ msgstr "Audiokanal wählen: "
+
+#~ msgid "Audio Language: "
+#~ msgstr "Audiosprache: "
+
+#~ msgid "Audio Format: "
+#~ msgstr "Audioformat: "
+
+#~ msgid "Image Size: "
+#~ msgstr "Bildgröße: "
+
+#~ msgid "16:9"
+#~ msgstr "16:9"
+
+#~ msgid "4:3"
+#~ msgstr "4:3"
+
+#~ msgid "Width Height Options"
+#~ msgstr "Breite-Höhe-Optionen"
+
+#~ msgid "Width: "
+#~ msgstr "Breite: "
+
+#~ msgid "Height: "
+#~ msgstr "Höhe: "
+
+#~ msgid "Output Quality"
+#~ msgstr "Ausgabequaltität"
+
+#~ msgid "Bitrate: "
+#~ msgstr "Bitrate: "
+
+#~ msgid "<4-16000> Kbit"
+#~ msgstr "<4-16000> Kbit"
+
+#~ msgid "<16001-24000000> bit"
+#~ msgstr "<16001-24000000> bit"
+
+#~ msgid "DivX 4 Options"
+#~ msgstr "DivX4-Optionen"
+
+#~ msgid "Quality: "
+#~ msgstr "Qualität: "
+
+#~ msgid "lavc Options"
+#~ msgstr "Lavc-Optionen"
+
+#~ msgid "Codec: "
+#~ msgstr "Codec: "
+
+#~ msgid "DivX 3"
+#~ msgstr "DivX3"
+
+#~ msgid "Old Real Video"
+#~ msgstr "Altes Real-Video"
+
+#~ msgid "Mpeg1"
+#~ msgstr "Mpeg1"
+
+#~ msgid "Motion JPG"
+#~ msgstr "Motion JPG"
+
+#~ msgid "H263"
+#~ msgstr "H263"
+
+#~ msgid "H263 Plus"
+#~ msgstr "H263 Plus"
+
+#~ msgid "&High Quality Mode"
+#~ msgstr "&Hoch-Qualität-Modus"
+
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#~ msgid "&Audio OFF"
+#~ msgstr "&Audio OFF"
+
+#~ msgid "lame MP3 Options"
+#~ msgstr "Lame MP3-Optionen"
+
+#~ msgid "Variable"
+#~ msgstr "Variable"
+
+#~ msgid "Average"
+#~ msgstr "Durchschnittlich"
+
+#~ msgid "Constant"
+#~ msgstr "Konstante"
+
+#~ msgid "Mode: "
+#~ msgstr "Modus: "
+
+#~ msgid "Stereo"
+#~ msgstr "Stereo"
+
+#~ msgid "Joint Stereo"
+#~ msgstr "Joint Stereo"
+
+#~ msgid "Dual Channel"
+#~ msgstr "Dual Kanal"
+
+#~ msgid "Mono"
+#~ msgstr "Mono"
+
+#~ msgid "Compression Ratio: "
+#~ msgstr "Kompressionsverhältnis: "
+
+#~ msgid "Volume Gain: "
+#~ msgstr "Lautstärken-Verstärkung: "
+
+#~ msgid "Sound"
+#~ msgstr "Persönliche Einstellungen"
+
+#~ msgid "Cache: "
+#~ msgstr "Zwischenspeicher: "
+
+#~ msgid "KBytes"
+#~ msgstr "KByte"
+
+#~ msgid "Cdrom Device: "
+#~ msgstr "CD-Gerät: "
+
+#~ msgid "DVD Device: "
+#~ msgstr "DVD-Gerät: "
+
+#~ msgid "No S&kip"
+#~ msgstr "Keine &Sprünge"
+
+#~ msgid "&Verbose"
+#~ msgstr "&Wortreich"
+
+#~ msgid "&End Position"
+#~ msgstr "&Endposition"
+
+#~ msgid "End Position Options"
+#~ msgstr "Endposition-Optionen"
+
+#~ msgid "End Position: "
+#~ msgstr "Endposition: "
+
+#~ msgid "mb"
+#~ msgstr "MB"
+
+#~ msgid "MBytes"
+#~ msgstr "MBytes"
+
+#~ msgid "Time: "
+#~ msgstr "Zeit: "
+
+#~ msgid ":"
+#~ msgstr ":"
+
+#~ msgid "H"
+#~ msgstr "H"
+
+#~ msgid "M"
+#~ msgstr "M"
+
+#~ msgid "S"
+#~ msgstr "S"
+
+#~ msgid "Misc"
+#~ msgstr "Diverses"
+
+#~ msgid "Authors:"
+#~ msgstr "Autoren:"
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "Email"
+#~ msgstr "E-Mail"
+
+#~ msgid "Rolando Gonzalez"
+#~ msgstr "Rolando Gonzalez"
+
+#~ msgid "<rolando8@prtc.net>"
+#~ msgstr "<rolando8@prtc.net>"
+
+#~ msgid "Josue Irizarry"
+#~ msgstr "Josue Irizarry"
+
+#~ msgid "<josue@vidalinux.com>"
+#~ msgstr "<josue@vidalinux.com>"
+
+#~ msgid "&Encode"
+#~ msgstr "&Kodieren"
+
+#~ msgid "&Play"
+#~ msgstr "Ab&spielen"
+
+#~ msgid "S&top"
+#~ msgstr "S&topp"
+
+#~ msgid "C&lear"
+#~ msgstr "&Löschen"
+
+#~ msgid "Done List"
+#~ msgstr "Fertig-Liste"
+
+#~ msgid "StdOut"
+#~ msgstr "Standardausgabe"
+
+#~ msgid "StdErr"
+#~ msgstr "Standarderror"

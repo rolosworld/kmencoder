@@ -1,0 +1,121 @@
+<HTML>
+<HEAD>
+<TITLE>class KMenVideo</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class KMenVideo</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">
+ <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="kmencoder___kmenvideo_h.html">kmencoder/kmenvideo.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-KMenVideo.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">KMenVideo</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">~KMenVideo</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref3">setVideoHeight</A></b> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> height ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref4">setVideoWidth</A></b> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> width ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref5">setVideoAspectMode</A></b> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> aspect ) 
+</LI>
+<LI><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<b><A HREF="#ref6">getVideoWidth</A></b> () 
+</LI>
+<LI><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<b><A HREF="#ref7">getVideoHeight</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref8">setVideoLavcOpts</A></b> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> codec,
+                         bool quality ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref9">setVideoDivx4Opts</A></b> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> quality ) 
+</LI>
+<LI><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<b><A HREF="#ref10">getVideoLavcOpts</A></b> () 
+</LI>
+<LI><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<b><A HREF="#ref11">getVideoDivx4Opts</A></b> () 
+</LI>
+<LI><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<b><A HREF="#ref12">getVideoAspectMode</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref13">setVideoArguments</A></b> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qprocess.html">QProcess</A> *procs, <A HREF="KMenComboBox.html">KMenComboBox</A> sel ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">setVideoEncode_enabled</A></b> ( bool enabled ) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref15">getVideoPass</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref16">setVideoPass</A></b> ( bool enabled ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref17">setVideoBitrate</A></b> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> bitrate ) 
+</LI>
+<LI><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<b><A HREF="#ref18">getVideoBitrate</A></b> () 
+</LI>
+<LI>unsigned short &nbsp;<b><A HREF="#ref19">getVideoPassCount</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref20">setVideoPassCount</A></b> ( unsigned short count ) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref21">getVideoPassRenamed</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref22">setVideoPassRenamed</A></b> ( bool done ) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>QString *<b><A HREF="#ref23">video_aspect</A></b></LI>
+<LI>QString *<b><A HREF="#ref24">video_lavc_opts</A></b></LI>
+<LI>QString *<b><A HREF="#ref25">video_divx4_opts</A></b></LI>
+<LI>QString *<b><A HREF="#ref26">video_width</A></b></LI>
+<LI>bool <b><A HREF="#ref27">video_pass</A></b></LI>
+<LI>bool <b><A HREF="#ref28">video_encode</A></b></LI>
+<LI>QString *<b><A HREF="#ref29">video_height</A></b></LI>
+<LI>unsigned short <b><A HREF="#ref30">video_pass_count</A></b></LI>
+<LI>QString *<b><A HREF="#ref31">video_bitrate</A></b></LI>
+<LI>bool <b><A HREF="#ref32">video_pass_renamed</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+</p>
+<A NAME="KMenVideo"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>KMenVideo</strong> ()
+<br></td><td align="right"><h3><strong>KMenVideo</strong></h3></td></tr></table><p></p><A NAME="~KMenVideo"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~KMenVideo</strong> ()
+<br></td><td align="right"><h3><strong>~KMenVideo</strong></h3></td></tr></table><p></p><A NAME="setVideoHeight"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setVideoHeight</strong> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> height )
+<br></td><td align="right"><h3><strong>setVideoHeight</strong></h3></td></tr></table><p></p><A NAME="setVideoWidth"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setVideoWidth</strong> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> width )
+<br></td><td align="right"><h3><strong>setVideoWidth</strong></h3></td></tr></table><p></p><A NAME="setVideoAspectMode"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setVideoAspectMode</strong> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> aspect )
+<br></td><td align="right"><h3><strong>setVideoAspectMode</strong></h3></td></tr></table><p></p><A NAME="getVideoWidth"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<strong>getVideoWidth</strong> ()
+<br></td><td align="right"><h3><strong>getVideoWidth</strong></h3></td></tr></table><p></p><A NAME="getVideoHeight"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<strong>getVideoHeight</strong> ()
+<br></td><td align="right"><h3><strong>getVideoHeight</strong></h3></td></tr></table><p></p><A NAME="setVideoLavcOpts"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setVideoLavcOpts</strong> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> codec,
+                         bool quality )
+<br></td><td align="right"><h3><strong>setVideoLavcOpts</strong></h3></td></tr></table><p></p><A NAME="setVideoDivx4Opts"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setVideoDivx4Opts</strong> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> quality )
+<br></td><td align="right"><h3><strong>setVideoDivx4Opts</strong></h3></td></tr></table><p></p><A NAME="getVideoLavcOpts"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<strong>getVideoLavcOpts</strong> ()
+<br></td><td align="right"><h3><strong>getVideoLavcOpts</strong></h3></td></tr></table><p></p><A NAME="getVideoDivx4Opts"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<strong>getVideoDivx4Opts</strong> ()
+<br></td><td align="right"><h3><strong>getVideoDivx4Opts</strong></h3></td></tr></table><p></p><A NAME="getVideoAspectMode"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<strong>getVideoAspectMode</strong> ()
+<br></td><td align="right"><h3><strong>getVideoAspectMode</strong></h3></td></tr></table><p></p><A NAME="setVideoArguments"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setVideoArguments</strong> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qprocess.html">QProcess</A> *procs, <A HREF="KMenComboBox.html">KMenComboBox</A> sel )
+<br></td><td align="right"><h3><strong>setVideoArguments</strong></h3></td></tr></table><p></p><A NAME="setVideoEncode_enabled"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setVideoEncode_enabled</strong> ( bool enabled )
+<br></td><td align="right"><h3><strong>setVideoEncode_enabled</strong></h3></td></tr></table><p></p><A NAME="getVideoPass"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getVideoPass</strong> ()
+<br></td><td align="right"><h3><strong>getVideoPass</strong></h3></td></tr></table><p></p><A NAME="setVideoPass"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setVideoPass</strong> ( bool enabled )
+<br></td><td align="right"><h3><strong>setVideoPass</strong></h3></td></tr></table><p></p><A NAME="setVideoBitrate"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setVideoBitrate</strong> ( <A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> bitrate )
+<br></td><td align="right"><h3><strong>setVideoBitrate</strong></h3></td></tr></table><p></p><A NAME="getVideoBitrate"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> &nbsp;<strong>getVideoBitrate</strong> ()
+<br></td><td align="right"><h3><strong>getVideoBitrate</strong></h3></td></tr></table><p></p><A NAME="getVideoPassCount"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned short &nbsp;<strong>getVideoPassCount</strong> ()
+<br></td><td align="right"><h3><strong>getVideoPassCount</strong></h3></td></tr></table><p></p><A NAME="setVideoPassCount"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setVideoPassCount</strong> ( unsigned short count )
+<br></td><td align="right"><h3><strong>setVideoPassCount</strong></h3></td></tr></table><p></p><A NAME="getVideoPassRenamed"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getVideoPassRenamed</strong> ()
+<br></td><td align="right"><h3><strong>getVideoPassRenamed</strong></h3></td></tr></table><p></p><A NAME="setVideoPassRenamed"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setVideoPassRenamed</strong> ( bool done )
+<br></td><td align="right"><h3><strong>setVideoPassRenamed</strong></h3></td></tr></table><p></p><A NAME="video_aspect"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>video_aspect</strong>
+</td><td align="right"><h3><strong>video_aspect</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="video_lavc_opts"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>video_lavc_opts</strong>
+</td><td align="right"><h3><strong>video_lavc_opts</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="video_divx4_opts"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>video_divx4_opts</strong>
+</td><td align="right"><h3><strong>video_divx4_opts</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="video_width"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>video_width</strong>
+</td><td align="right"><h3><strong>video_width</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="video_pass"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>video_pass</strong>
+</td><td align="right"><h3><strong>video_pass</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="video_encode"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>video_encode</strong>
+</td><td align="right"><h3><strong>video_encode</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="video_height"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>video_height</strong>
+</td><td align="right"><h3><strong>video_height</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="video_pass_count"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned short  <strong>video_pass_count</strong>
+</td><td align="right"><h3><strong>video_pass_count</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="video_bitrate"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="../../../../../../../../usr/lib/qt-3.0.4/doc/html/qstring.html">QString</A> * <strong>video_bitrate</strong>
+</td><td align="right"><h3><strong>video_bitrate</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="video_pass_renamed"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>video_pass_renamed</strong>
+</td><td align="right"><h3><strong>video_pass_renamed</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR><UL><LI><i>Author</i>: Rolando
+  </LI><LI><i>Generated</i>: rolo on rolo on Mon Jul 29 23:59:05 2002, using kdoc 2.0a54.</LI></UL></BODY></HTML>
