@@ -761,8 +761,9 @@ void kmencoderdlgForm::begin()
 	connect( proc, SIGNAL( processExited() ),
 		 this, SLOT( permission2begin() ) ); 
 
-    connect( proc, SIGNAL( processExited() ),
-	     this, SLOT( renameFile() ) ); 
+    if( start_encode == TRUE )
+	connect( proc, SIGNAL( processExited() ),
+		 this, SLOT( renameFile() ) ); 
     
     //Set Misc Settings.  In case something was changed to comply.
     connect( proc, SIGNAL( processExited() ),
@@ -773,7 +774,7 @@ void kmencoderdlgForm::begin()
 	     this, SLOT( forward_pass() ) );
     
     //check the args created! just for debug!
-    doneListBox->insertStringList( proc->arguments() );
+//    doneListBox->insertStringList( proc->arguments() );
 
     //START process
     start_proc();

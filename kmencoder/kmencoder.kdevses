@@ -3,7 +3,14 @@
 <KDevPrjSession>
  <LastCompileConfig>(Predeterminado)</LastCompileConfig>
  <Mainframe MaximizeMode="1" />
- <DocsAndViews NumberOfDocuments="0" />
+ <DocsAndViews NumberOfDocuments="2" >
+  <Doc0 CursorPosLine="27" Type="KWriteDoc" NumberOfViews="1" CursorPosCol="0" FileName="/home/rolo/Projects/Beta/SRCFRG/TEST/KMencoder/kmencoder/kmenconfig.h" >
+   <View0 Top="30" Width="400" Attach="1" Height="300" Left="3" Focus="0" Type="KWriteView" MinMaxMode="0" />
+  </Doc0>
+  <Doc1 CursorPosLine="123" Type="KWriteDoc" NumberOfViews="1" CursorPosCol="40" FileName="/home/rolo/Projects/Beta/SRCFRG/TEST/KMencoder/kmencoder/kmenconfig.cpp" >
+   <View0 Top="28" Width="963" Attach="1" Height="679" Left="28" Focus="1" Type="KWriteView" MinMaxMode="2" />
+  </Doc1>
+ </DocsAndViews>
  <CompileConfigs>
   <releade>
    <Architecture>i386</Architecture>
